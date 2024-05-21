@@ -8585,7 +8585,7 @@ msgstr "以下各节将详细说明扩展的类型。"
 #: zsh.texi:4325 zsh.texi:13950 zsh.texi:13951 zsh.texi:29750 zsh.texi:29751
 #, no-wrap
 msgid "history"
-msgstr "历史"
+msgstr "history"
 
 #. type: cindex
 #: zsh.texi:4326
