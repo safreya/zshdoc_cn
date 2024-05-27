@@ -1860,8 +1860,7 @@ msgid ""
 "may be turned @emph{off} by name by using @t{+o} instead of @t{-o}.  @t{-o} can be stacked up with preceding single-letter options, so for "
 "example `@t{-xo shwordsplit}' or `@t{-xoshwordsplit}' is equivalent to `@t{-x -o shwordsplit}'."
 msgstr ""
-"运行脚本 @t{scr}，用相应的字母`@t{-x}'设置 @t{XTRACE} 选项，用名称设置 @t{SH_WORD_SPLIT} 选项。 使用 @t{+o} 代替 @t{-o}，可以按名称 @emph{off} 关"
-"闭选项。 @t{-o} 可以与前面的单字母选项叠加，例如，`@t{-xo shwordsplit}'或`@t{-xoshwordsplit}'等同于`@t{-x -o shwordsplit}'。"
+"运行脚本 @t{scr}，用相应的字母`@t{-x}'设置 @t{XTRACE} 选项，用名称设置 @t{SH_WORD_SPLIT} 选项。 使用 @t{+o} 代替 @t{-o}，可以按名称 @emph{关闭} 选项。 @t{-o} 可以与前面的单字母选项叠加，例如，`@t{-xo shwordsplit}'或`@t{-xoshwordsplit}'等同于`@t{-x -o shwordsplit}'。"
 
 #. type: cindex
 #: zsh.texi:840
@@ -1925,7 +1924,7 @@ msgid ""
 "Except when the @cite{sh}/@cite{ksh} emulation single-letter options are in effect, the option `@t{-b}' (or `@t{+b}') ends option processing.  "
 "`@t{-b}' is like `@t{-}@t{-}', except that further single-letter options can be stacked after the `@t{-b}' and will take effect as normal."
 msgstr ""
-"除了在 @cite{sh}/@cite{ksh} 模拟单字母选项生效时，选项`@t{-b}' (或 `@t{+b}') 会结束选项处理。 `@t{-b}'类似于`@t{-}@t{-}'，只是在`@t{-b}' 之后可以"
+"除非启用了 @cite{sh}/@cite{ksh} 模拟单字母选项效果，否则选项`@t{-b}' (或 `@t{+b}') 会结束选项处理。 `@t{-b}'类似于`@t{-}@t{-}'，只是在`@t{-b}' 之后可以"
 "堆叠更多的单字母选项，并按正常方式生效。"
 
 #. type: node
