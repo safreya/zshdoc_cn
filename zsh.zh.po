@@ -2255,7 +2255,7 @@ msgid ""
 "possible for a file in @t{$ZDOTDIR} to re-enable @t{GLOBAL_RCS}. Both @t{RCS} and @t{GLOBAL_RCS} are set by default."
 msgstr ""
 "命令首先从 @t{/etc/zshenv}中读取；该选项不可覆盖。 @t{RCS} 和 @t{GLOBAL_RCS} 选项可修改后续行为；前者影响所有启动文件，后者仅影响全局启动文件（此"
-"处显示的文件路径以 @t{/} 开头）。 如果在任何时候未设置其中一个选项，则不会读取相应类型的后续启动文件。 @t{$ZDOTDIR} 中的文件也有可能重新启用 "
+"处显示的文件路径以 @t{/} 开头）。 如果在任何时候未设置@emph{[译注:”未设置“在很多时候也是”取消设置“的意思，这时显然是”取消设置“的意思]}其中一个选项，则不会读取相应类型的后续启动文件。 @t{$ZDOTDIR} 中的文件也有可能重新启用 "
 "@t{GLOBAL_RCS}。@t{RCS} 和 @t{GLOBAL_RCS} 均为默认设置。"
 
 #. type: Plain text
