@@ -1762,7 +1762,7 @@ msgstr "标志, shell"
 #. type: Plain text
 #: zsh.texi:767
 msgid "The following flags are interpreted by the shell when invoked to determine where the shell will read commands from:"
-msgstr "调用 shell 时，shell 会解释以下标志，以确定 shell 从何处读取命令："
+msgstr "调用 shell 时，shell 会解释以下标志，以确定 shell 从何处读取命令：@uref{comments/invocation.html#invocation-overview,[译注:调用]}"
 
 #. type: t{#1}
 #: zsh.texi:770 zsh.texi:12701 zsh.texi:13124 zsh.texi:14208 zsh.texi:14474 zsh.texi:15345 zsh.texi:15543 zsh.texi:25755 zsh.texi:27023
@@ -1776,7 +1776,7 @@ msgstr "-c"
 msgid ""
 "Take the first argument as a command to execute, rather than reading commands from a script or standard input.  If any further arguments are "
 "given, the first one is assigned to @t{$0}, rather than being used as a positional parameter."
-msgstr "将第一个参数作为要执行的命令，而不是从脚本或标准输入中读取命令。 如果还有其他参数，第一个参数会被赋值给 @t{$0}，而不是作为位置参数使用。"
+msgstr "将第一个参数作为要执行的命令，而不是从脚本或标准输入中读取命令。 如果还有其他参数，第一个参数会被赋值给 @t{$0}，而不是作为位置参数使用。@uref{comments/invocation.html#invocation-flag-c,[译注:调用.标志.c]}"
 
 #. type: t{#1}
 #: zsh.texi:776 zsh.texi:12623 zsh.texi:12670 zsh.texi:13612 zsh.texi:14220 zsh.texi:15351 zsh.texi:41136

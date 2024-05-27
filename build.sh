@@ -14,3 +14,4 @@ for file in ../comments/*.md; do
 		multimarkdown -f "$file" > "comments/$filename.html"
 	fi
 done
+cp ../comments/mystyle.css comments/mystyle.css
