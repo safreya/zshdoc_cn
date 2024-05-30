@@ -2584,7 +2584,7 @@ msgid ""
 "zero status.  If it does not, the value of the sublist is that return status, else it is the status returned by the @t{print} (almost certainly "
 "zero)."
 msgstr ""
-"是一个由两条管道组成的子列表（sublist），第二条管道只是一条简单的命令，只有当 @t{grep} 命令返回零状态时才会执行。 如果没有，子列表的值就是返回状"
+"是一个由两条管道组成的子列表（sublist），第二条管道只是一条简单的命令，只有当 @t{grep} 命令返回零状态时才会执行。 如果 @t{grep} 返回非零状态，子列表的值就是这个非零返回状"
 "态，否则就是 @t{print} 返回的状态（几乎肯定是零）。"
 
 #. type: t{#1}
