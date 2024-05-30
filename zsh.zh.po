@@ -2567,9 +2567,9 @@ msgid ""
 "`@t{||}', the second is executed only if the first fails (returns a nonzero status).  Both operators have equal precedence and are left "
 "associative.  The value of the sublist is the value of the last pipeline executed.  For example,"
 msgstr ""
-"一个 @emph{sublist} 既可以是一条管道，也可以是由两条或多条管道组成的序列，中间用`@t{&&}'或`@t{||}'隔开。 如果两条流水线由`@t{&&}'分隔，则只有在第"
-"一条流水线成功（返回零状态）后，才会执行第二条流水线。 如果两条流水线之间用`@t{||}'隔开，则只有在第一条流水线失败（返回非零状态）时，才会执行第二"
-"条流水线。 这两个操作符具有相同的优先级，并且都是左关联。 子列表的值是最后执行的管道的值。 例如"
+"一个 @emph{sublist} 既可以是一条管道，也可以是由两条或多条管道组成的序列，中间用`@t{&&}'或`@t{||}'隔开。 如果两条管道由`@t{&&}'分隔，则只有在第"
+"一条管道成功（返回零状态）后，才会执行第二条管道。 如果两条管道之间用`@t{||}'隔开，则只有在第一条管道失败（返回非零状态）时，才会执行第二"
+"条管道。 这两个操作符具有相同的优先级，并且都是左关联。 子列表的值是最后执行的管道的值。 例如"
 
 #. type: example
 #: zsh.texi:1273
