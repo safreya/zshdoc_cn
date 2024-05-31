@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-05-30 15:00+0800\n"
+"PO-Revision-Date: 2024-05-31 09:45+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -2687,7 +2687,9 @@ msgstr "@t{for} @var{name} ... [ @t{in} @var{word} ... ] @var{term} @t{do} @var{
 msgid ""
 "Expand the list of @var{word}s, and set the parameter @var{name} to each of them in turn, executing @var{list} each time.  If the `@t{in} @var{word}' is omitted, use the positional parameters instead of "
 "the @var{word}s."
-msgstr "展开 @var{word} 列表，依次将参数 @var{name} 设置为其中的每一个，每次都执行 @var{list}。 如果省略`@t{in} @var{word}'，则将使用位置参数而不是 @var{word}。"
+msgstr ""
+"展开 @var{word} 列表，依次将参数 @var{name} 设置为其中的每一个，每次都执行 @var{list}。 如果省略`@t{in} @var{word}'，则将使用位置参数而不是 @var{word}。@uref{comments/syntax.html#syntax-for-ex1,[译注:for."
+"示例1]}"
 
 #. type: table
 #: zsh.texi:1403
@@ -2702,8 +2704,8 @@ msgid ""
 "@var{word} to assign to the first @var{name}.  It is only possible for @t{in} to appear as the first @var{name} in the list, else it will be treated as marking the end of the list."
 msgstr ""
 "在 @var{word} 之前可以出现多个参数 @var{name}。 如果给出 @var{N} 个 @var{name}，那么在循环的每次执行中，下面每 @var{N} 个 @var{word}s 都会分配给相应的参数。 如果 @var{name} 个数多于剩余的 @var{word}，剩余"
-"的参数将被设置为空字符串。 当没有剩余的 @var{word} 可以分配给第一个 @var{name} 时，循环执行结束。 @t{in} 作为 @var{name} 列表中的第一个 @var{name} 出现时，才能作为 @var{name} 使用，否则它将被视为 "
-"@var{name} 列表的结束符。"
+"的参数将被设置为空字符串。 @uref{comments/syntax.html#syntax-for-ex2,[译注:for.示例2]}当没有剩余的 @var{word} 可以分配给第一个 @var{name} 时，循环执行结束。 @t{in} 作为 @var{name} 列表中的第一个 "
+"@var{name} 出现时，才能作为 @var{name} 使用，否则它将被视为 @var{name} 列表的结束符。@uref{comments/syntax.html#syntax-for-ex3,[译注:for.示例3]}"
 
 #. type: item
 #: zsh.texi:1414
@@ -2851,7 +2853,7 @@ msgid ""
 "shells)."
 msgstr ""
 "还需要注意的是，除非设置了 @t{SH_GLOB} 选项，否则 shell 会将整个模式与括号内的模式组同等对待，尽管在括号和竖线附近可能会出现空白，但这些空白会从模式中删除。 空格可能出现在模式的其他地方，但不会被删除。 如"
-"果设置了 @t{SH_GLOB} 选项，以便将开头的括号明确地视为case语法的一部分，那么表达式将被解析为单独的单词，这些单词将被视为严格的替代词（与其他 shell 相同）。"
+"果设置了 @t{SH_GLOB} 选项，那么开头的括号明确地视为case语法的一部分，那么表达式将被解析为单独的单词，这些单词将被视为严格的替代词（与其他 shell 相同）。"
 
 #. type: table
 #: zsh.texi:1474
@@ -2896,7 +2898,7 @@ msgstr "@t{select} @var{name} [ @t{in} @var{word} ... @var{term} ] @t{do} @var{l
 #. type: table
 #: zsh.texi:1488
 msgid "where @var{term} is one or more newline or @t{;} to terminate the @var{word}s."
-msgstr "其中 @var{term} 是一个或多个换行符，或 @t{;} 来终止 @var{word}s."
+msgstr "其中 @var{term} 是一个或多个换行符，或 @t{;} ，用以终止 @var{word}s."
 
 #. type: vindex
 #: zsh.texi:1488 zsh.texi:7387 zsh.texi:14419
