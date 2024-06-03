@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-05-31 14:53+0800\n"
+"PO-Revision-Date: 2024-06-03 15:00+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -2853,7 +2853,8 @@ msgid ""
 "shells)."
 msgstr ""
 "还需要注意的是，除非设置了 @t{SH_GLOB} 选项，否则 shell 会将整个模式视为括号内的模式组对待，尽管在括号和竖线附近可能会出现空白，但这些空白会从模式中删除。 空格可能出现在模式的其他地方，但不会被删除。 如果"
-"设置了 @t{SH_GLOB} 选项，那么开头的括号明确地视为case语法的一部分，那么表达式将被解析为单独的单词，这些单词将被视为严格的替代词（与其他 shell 相同）。[译注:这里只是shell处理时的内部逻辑，在这里使用时不必关心]"
+"设置了 @t{SH_GLOB} 选项，那么开头的括号明确地视为case语法的一部分，那么表达式将被解析为单独的单词，这些单词将被视为严格的替代词（与其他 shell 相同）。[译注:这里只是shell处理时的内部逻辑，在这里使用时不必关"
+"心]"
 
 #. type: table
 #: zsh.texi:1474
@@ -2916,7 +2917,7 @@ msgid ""
 msgstr ""
 "打印一组 @var{word}，每个前面都有一个数字。 如果省略 @t{in} @var{word}  则使用位置参数。 如果 shell 是交互式的，并且行编辑器处于激活状态，则会打印 @t{PROMPT3} 提示符，然后从行编辑器读取一行，否则从标准输入"
 "读取一行。 如果该行包含所列 @var{word} 的编号，那么参数 @var{name} 将被设置为与该编号对应的 @var{word}。 如果该行为空，则再次打印选择列表。 否则，参数 @var{name} 的值将被设置为空。 从标准输入读取的行内容将"
-"保存在参数 @t{REPLY} 中。 @var{list} 会在每次选择时执行，直到遇到中断或文件结束。"
+"保存在参数 @t{REPLY} 中。 @var{list} 会在每次选择时执行，直到遇到中断或文件结束。@uref{comments/syntax.html#syntax-select-name,[译注:语法.select]}"
 
 #. type: cindex
 #: zsh.texi:1502

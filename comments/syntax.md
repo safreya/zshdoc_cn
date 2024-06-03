@@ -61,3 +61,33 @@ out:inv1, in:
 out:outv2, in:
 out:inv2, in:
 ```
+
+## select
+
+name 输入时，首个非空白字符应该为数字字符，与该字符相连的所有数字组合成一个数值，如果数值大小在选择范围内，name 就是这个数值，否则为空。
+
+```
+bsd % select name in a b c d e f g h i j k l m n o p q r s t u v w x y z
+select> do                        
+select> print "name:'$name'"
+select> print "$REPLY"
+select> done                      
+1) a   4) d   7) g   10) j  13) m  16) p  19) s  22) v  25) y  
+2) b   5) e   8) h   11) k  14) n  17) q  20) t  23) w  26) z  
+3) c   6) f   9) i   12) l  15) o  18) r  21) u  24) x  
+?# c1d3                      
+name:''
+c1d3
+?# 4a
+name:'d'
+4a
+?#      3y
+name:'c'
+	3y
+?#  3x
+name:'c'
+ 3x
+?# 4xx5yy
+name:'d'
+4xx5yy
+``` 
