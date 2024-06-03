@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-03 15:00+0800\n"
+"PO-Revision-Date: 2024-06-03 15:39+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -2986,7 +2986,7 @@ msgstr ""
 #. type: table
 #: zsh.texi:1528
 msgid "Optional newlines or semicolons may appear after the @t{always}; note, however, that they may @emph{not} appear between the preceding closing brace and the @t{always}."
-msgstr "在 @t{always} 之后可以出现可选的换行符或分号，但要注意，它们可以 @emph{不} 出现在前面的收尾括号和 @t{always} 之间。"
+msgstr "在 @t{always} 之后可以出现可选的换行符或分号，但要注意，换行符或分号 @emph{不可以} 出现在前面的收尾括号和 @t{always} 之间。"
 
 #. type: table
 #: zsh.texi:1538
