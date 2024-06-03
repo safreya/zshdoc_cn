@@ -62,7 +62,7 @@ out:outv2, in:
 out:inv2, in:
 ```
 
-## select
+## select [syntax-select-name]
 
 name 输入时，首个非空白字符应该为数字字符，与该字符相连的所有数字组合成一个数值，如果数值大小在选择范围内，name 就是这个数值，否则为空。
 
