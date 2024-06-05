@@ -91,3 +91,57 @@ name:'c'
 name:'d'
 4xx5yy
 ``` 
+
+## always [syntax-always]
+
+`错误' 是指会导致中止执行的情况(try-list 中止执行)。语句产生错误（返回非0值），这时 try-list 不中止执行,在这里不算错误。
+
+```
+bsd % cat test.sh        
+#! /usr/local/bin/zsh
+echo "1. TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+{
+	if [[]];then
+		echo "never run"
+	fi	
+	echo "2.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+} always
+{
+	echo "3.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+	echo "always run"
+}
+echo "4.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+bsd % zsh test.sh        
+1. TRY_BLOCK_ERROR: -1
+test.sh:5: no matches found: [[]]
+3.TRY_BLOCK_ERROR: 1
+always run
+```
+
+try-list 中，if 语句错误，try-list 中止执行，执行完 always-list 后，中止脚本。
+
+```
+bsd % cat test2.sh
+#! /usr/local/bin/zsh
+echo "1. TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+{
+	if [[]];then
+		echo "never run"
+	fi	
+	echo "2.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+} always
+{
+	echo "3.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+	echo "always run"
+	TRY_BLOCK_ERROR=0
+}
+echo "4.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR"
+bsd % zsh test2.sh
+1. TRY_BLOCK_ERROR: -1
+test2.sh:5: no matches found: [[]]
+3.TRY_BLOCK_ERROR: 1
+always run
+4.TRY_BLOCK_ERROR: -1
+```
+
+always-list 中设置 `TRY_BLOCK_ERROR=0` 后，always 语句执行完，脚本仍然继续执行。always-list 外， `TRY_BLOCK_ERROR` 的值无关紧要，被设置为 `-1`。

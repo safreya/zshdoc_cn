@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-03 15:51+0800\n"
+"PO-Revision-Date: 2024-06-05 14:04+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3007,7 +3007,7 @@ msgid ""
 msgstr ""
 "错误条件可以通过特殊的整数变量 @t{TRY_BLOCK_ERROR} 进行测试和重置。 在 @var{always-list} 之外，该变量的值无关紧要，但会被初始化为 @t{-1}。 在 @var{always-list} 中，如果 @var{try-list} 发生错误，则值为 1，"
 "否则为 0。 如果 @t{TRY_BLOCK_ERROR} 在 @var{always-list} 中被设置为 0，由 @var{try-list} 引起的错误将被重置，shell 执行将在 @var{always-list} 结束后继续正常进行。 在 @var{try-list}期间更改值并无用处（除非"
-"它构成了外层 @t{always} 代码块的一部分）。"
+"它构成了外层 @t{always} 代码块的一部分）。@uref{comments/syntax.html#syntax-always,[译注:语法.always]}"
 
 #. type: table
 #: zsh.texi:1555
