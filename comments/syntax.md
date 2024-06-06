@@ -94,7 +94,7 @@ name:'d'
 
 ## always [syntax-always]
 
-`错误' 是指会导致中止执行的情况(try-list 中止执行)。语句产生错误（返回非0值），这时 try-list 不中止执行,在这里不算错误。
+`错误` 是指会导致中止执行的情况(try-list 中止执行)。语句产生错误（返回非0值），这时 try-list 不中止执行,在这里不算错误。
 
 ```
 bsd % cat test.sh        
@@ -145,3 +145,48 @@ always run
 ```
 
 always-list 中设置 `TRY_BLOCK_ERROR=0` 后，always 语句执行完，脚本仍然继续执行。always-list 外， `TRY_BLOCK_ERROR` 的值无关紧要，被设置为 `-1`。
+
+## function [syntax-function]
+
+一个函数可以有同时定义多个函数名
+
+```
+bsd % function func1 func2     
+function> echo "function with 2 names"
+bsd % func1               
+function with 2 names
+bsd % func2
+function with 2 names
+bsd % 
+```
+
+可以用`()`，但`()`必须放名称列表的最后，函数体可以是 `{ list }` 或 `command`(只有一条指令时）,函数体不能是 `do ... done` 块。
+
+```
+bsd % function func3 func4 ()
+function> do                        
+zsh: parse error near `do'             # 注: 不能使用 do ... done 块
+bsd % function func3 func4 ()
+function> {
+function> echo "this is an other function with 2 name."
+function> echo "() must put on end of name list."
+function> }
+bsd % func3                  
+this is an other function with 2 name.
+() must put on end of name list.
+bsd % func4
+this is an other function with 2 name.
+() must put on end of name list.
+bsd % function func5 () notafuncname;{echo "this is not a function body"} # 第15行:详见下面说明
+this is not a function body
+bsd % func5
+func5: command not found: notafuncname
+bsd % notafuncname   
+zsh: command not found: notafuncname
+```
+
+第15行：func5 后面的 `()` 终止函数名列表，notafuncname 被解释为 command (即函数体),而不是函数名。`;` 结束了前面一条语句，后面的 `{}` 表示一条新的语句（list）,这语句会立即执行，即输出第16行。
+
+第17行：原因如上，实际 func5 的函数体是命令notafuncname，实际不存在这个命令，所以 shell 报找不到命令的错误。
+
+另外：如果使用了 `()`，term 在语法上可以不再需要（如15行所示，不再举例）。
