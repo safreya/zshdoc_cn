@@ -190,3 +190,34 @@ zsh: command not found: notafuncname
 第17行：原因如上，实际 func5 的函数体是命令notafuncname，实际不存在这个命令，所以 shell 报找不到命令的错误。
 
 另外：如果使用了 `()`，term 在语法上可以不再需要（如15行所示，不再举例）。
+
+### shglob 的影响 [syntax-function-shglob]
+
+```
+bsd % cat test1.sh
+unsetopt shglob
+function test1 ( )     # ()之间有一个空格 
+{print "not work"}
+test1
+bsd % zsh test1.sh
+test1.sh:2: unknown file attribute:  
+bsd % cat test2.sh
+setopt shglob
+function aa ( )     # ()之间有一个空格 
+{print "this work"}
+this work
+bsd % zsh test2.sh
+this work
+```
+
+未设置 shglob 时，不要在`()`之间加上空白。
+
+不要在交互模式下打开shglob（除非你确定），这会引起zsh交互出现问题。
+
+```
+bsd % setopt shglob
+                        i
+No such widget `1:_zsh_highlight__zle-line-pre-redraw'
+```
+
+

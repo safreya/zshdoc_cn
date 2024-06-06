@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-06 08:33+0800\n"
+"PO-Revision-Date: 2024-06-06 12:24+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3104,7 +3104,9 @@ msgstr "启用对该函数的跟踪，就像使用 @t{functions -T} 一样。 �
 msgid ""
 "If the option @t{SH_GLOB} is set for compatibility with other shells, then whitespace may appear between the left and right parentheses when there is a single @var{word}; otherwise, the parentheses will "
 "be treated as forming a globbing pattern in that case."
-msgstr "如果为了与其他 shell 兼容而设置了 @t{SH_GLOB} 选项，那么当只有一个 @var{word} 时，左右括号之间可能会出现空白；否则，在这种情况下，括号将被视为形成一个 globbing 模式。"
+msgstr ""
+"如果为了与其他 shell 兼容而设置了 @t{SH_GLOB} 选项，那么当只有一个 @var{word} 时，左右括号之间可能会出现空白；否则，在这种情况下，括号将被视为形成一个 globbing 模式。@uref{comments/syntax.html#syntax-"
+"function-shglob,[译注:语法.function.shglob]}"
 
 #. type: table
 #: zsh.texi:1615
