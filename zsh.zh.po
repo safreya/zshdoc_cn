@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-06 12:24+0800\n"
+"PO-Revision-Date: 2024-06-11 09:37+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3207,9 +3207,9 @@ msgid ""
 "@t{repeat}, @t{case} and @t{select} commands no such special form for the arguments is necessary, but the other condition (the special form of @var{sublist} or use of the @t{SHORT_LOOPS} option) still "
 "applies.  The @t{SHORT_REPEAT} option is available to enable the short version only for the @t{repeat} command."
 msgstr ""
-"只有当 @var{sublist} 的形式为`@t{@{} @var{list} @t{@}}'时，或设置了 @t{SHORT_LOOPS} 选项，下面的简短版本才有效。 对于 @t{if}、@t{while} 和 @t{until} 命令，在这两种情况下，循环的测试部分也必须适当分隔，例如"
-"使用 `@t{[[} @var{...} @t{]]}' 或 `@t{((} @var{...} @t{))}'，否则将无法识别测试的结束。 对于 @t{for}、@t{repeat}、@t{case} 和 @t{select}，不需要为参数设置特殊形式，但其他条件（@var{sublist} 的特殊形式或使"
-"用 @t{SHORT_LOOPS} 选项）仍然适用。 @t{SHORT_REPEAT} 选项只能用于 @t{repeat} 命令的简短版本。"
+"只有当 @var{sublist} 的形式为`@t{@{} @var{list} @t{@}}'时，或设置了 @t{SHORT_LOOPS} 选项@uref{comments/syntax.html#syntax-alternate-shortloops,[译注:语法.短循环.shortloops]}，下面的简短版本才有效。 对于 "
+"@t{if}、@t{while} 和 @t{until} 命令，在这两种情况下，循环的测试部分也必须适当分隔，例如使用 `@t{[[} @var{...} @t{]]}' 或 `@t{((} @var{...} @t{))}'，否则将无法识别测试的结束。 对于 @t{for}、@t{repeat}、"
+"@t{case} 和 @t{select}，不需要为参数设置特殊形式，但其他条件（@var{sublist} 的特殊形式或使用 @t{SHORT_LOOPS} 选项）仍然适用。 @t{SHORT_REPEAT} 选项只能用于 @t{repeat} 命令的简短版本。"
 
 #. type: item
 #: zsh.texi:1670
@@ -3254,7 +3254,7 @@ msgstr ""
 #. type: table
 #: zsh.texi:1692
 msgid "does @emph{not}, since the test is not suitably delimited."
-msgstr "则@emph{不会}，因为测试没有适当的限定。"
+msgstr "则@emph{不会}，因为测试（条件）没有适当的分隔（符）。"
 
 #. type: item
 #: zsh.texi:1693

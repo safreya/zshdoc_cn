@@ -220,4 +220,29 @@ bsd % setopt shglob
 No such widget `1:_zsh_highlight__zle-line-pre-redraw'
 ```
 
+## 复杂命令的简短形式 [syntax-alternate-shortloops]
 
+shortloops 选项在csh、zsh模拟运行环境下已经默认开启。所以在 zsh 中，
+
+```
+bsd % if [[ true ]] print yes
+yes
+```
+
+以模拟兼容方式
+
+```
+bsd % cat test1.sh
+emulate ksh  # 或 setopt noshortloops
+if [[ true ]] print yes
+
+bsd % zsh test1.sh
+test1.sh:2: parse error near `print'
+
+bsd % cat test2.sh
+emulate csh # 或 emulate zsh
+if [[ true ]] print yes
+
+bsd % zsh test2.sh
+yes
+```
