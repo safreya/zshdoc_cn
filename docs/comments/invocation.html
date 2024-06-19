@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+</head>
+<body>
+
+<h1 id="zsh调用">zsh 调用</h1>
+
+<h2 id="invocation-overview">zsh 调用</h2>
+
+<p>zsh 调用会创建子 shell。注意引号的不同，双引号会在子 shell 执行前先执行变量替换。变量 SHLVL 表示 shell 嵌套层级。</p>
+
+<pre><code>% zsh -c 'print $SHLVL'   # 此处为子 shell 中的$SHLVL
+2
+% zsh -c &quot;print $SHLVL&quot;   # 此处为当前 shell 中的$SHLVL
+1
+</code></pre>
+
+<h2 id="invocation-flag-c"><code>-c</code> 选项</h2>
+
+<p><code>-c</code> 选项中 <code>$0</code>,<code>$1</code> 等，参考如下,区别于脚本或函数的位置参数：</p>
+
+<pre><code># 简单的
+% zsh -c 'echo &quot;some string&quot;'
+some string
+% zsh -c 'echo &quot;My name is $0&quot;' aaa bbb
+My name is aaa
+% zsh -c 'echo &quot;My name is $1&quot;' aaa bbb
+My name is bbb
+</code></pre>
+
+<p>第一句，够简单。第二三句，父 shell 构造参数，子 shell 使用，可以成为一个技巧，不然还是简单点。</p>
+
+<pre><code># 复杂的
+% cat ./test.sh 
+echo &quot;inner arg0: $0&quot;
+echo &quot;innet arg1: $1&quot;
+echo &quot;inner arg2: $2&quot;
+echo &quot;inner arg3: $3&quot;
+
+% zsh -c 'echo &quot;outer arg0: $0&quot;;echo &quot;outer arg1: $1&quot;;./test.sh aaa &quot;$0&quot; &quot;$1&quot;' bbb ccc
+outer arg0: bbb
+outer arg1: ccc
+inner arg0: ./test.sh
+innet arg1: aaa
+inner arg2: bbb
+inner arg3: ccc
+</code></pre>
+
+<p>如果用得着这么复杂，一定可以简化下吧。</p>
+
+</body>
+</html>
+

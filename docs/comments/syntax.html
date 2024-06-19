@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+</head>
+<body>
+
+<h1 id="语法">语法</h1>
+
+<h2 id="for">for</h2>
+
+<h3 id="syntax-for-ex1">示例1</h3>
+
+<p>省略 'in word&#8217;，则使用位置参数</p>
+
+<pre><code>bsd % function ex1
+function&gt; for value;do
+function for&gt; print &quot;$value&quot;
+function for&gt; done                      
+bsd % ex1 &quot;aaa&quot; &quot;bbb&quot; &quot;ccc&quot;
+aaa
+bbb
+ccc
+bsd % cat example_for.sh 
+for value;do
+    print &quot;$value&quot;
+done
+bsd % zsh example_for.sh &quot;aaa&quot; &quot;bbb&quot; &quot;ccc&quot;
+aaa
+bbb
+ccc
+</code></pre>
+
+<h3 id="syntax-for-ex2">示例2</h3>
+
+<p>word 按组分配，不足时，视为空</p>
+
+<pre><code>bsd % for key value desc in k1 v1 d1 k2 v2 d2 k3;do
+for&gt; print &quot;key:$key, value:$value, desc:$desc&quot;
+for&gt; done                      
+key:k1, value:v1, desc:d1
+key:k2, value:v2, desc:d2
+key:k3, value:, desc:
+</code></pre>
+
+<h3 id="syntax-for-ex3">示例3</h3>
+
+<p>应避免用 &#8220;in&#8221; 作为 &#8220;name&#8221;</p>
+
+<pre><code>bsd % for in out in inv1 outv2 inv2 outv2;do       
+for&gt; print &quot;in:$in, out:$out&quot;
+for&gt; done                      
+in:inv1, out:outv2
+in:inv2, out:outv2
+bsd % in=
+bsd % out=
+bsd % for out in in outv1 inv1 outv2 inv2 ;do # 注意，第一个 in 是分隔符，第二个 in 是值
+print &quot;out:$out, in:$in&quot;
+done
+out:in, in:
+out:outv1, in:
+out:inv1, in:
+out:outv2, in:
+out:inv2, in:
+</code></pre>
+
+<h2 id="syntax-select-name">select</h2>
+
+<p>name 输入时，首个非空白字符应该为数字字符，与该字符相连的所有数字组合成一个数值，如果数值大小在选择范围内，name 就是这个数值，否则为空。</p>
+
+<pre><code>bsd % select name in a b c d e f g h i j k l m n o p q r s t u v w x y z
+select&gt; do                        
+select&gt; print &quot;name:'$name'&quot;
+select&gt; print &quot;$REPLY&quot;
+select&gt; done                      
+1) a   4) d   7) g   10) j  13) m  16) p  19) s  22) v  25) y  
+2) b   5) e   8) h   11) k  14) n  17) q  20) t  23) w  26) z  
+3) c   6) f   9) i   12) l  15) o  18) r  21) u  24) x  
+?# c1d3                      
+name:''
+c1d3
+?# 4a
+name:'d'
+4a
+?#      3y
+name:'c'
+	3y
+?#  3x
+name:'c'
+ 3x
+?# 4xx5yy
+name:'d'
+4xx5yy
+</code></pre>
+
+<h2 id="syntax-always">always</h2>
+
+<p><code>错误</code> 是指会导致中止执行的情况(try-list 中止执行)。语句产生错误（返回非0值），这时 try-list 不中止执行,在这里不算错误。</p>
+
+<pre><code>bsd % cat test.sh        
+#! /usr/local/bin/zsh
+echo &quot;1. TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+{
+	if [[]];then
+		echo &quot;never run&quot;
+	fi	
+	echo &quot;2.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+} always
+{
+	echo &quot;3.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+	echo &quot;always run&quot;
+}
+echo &quot;4.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+bsd % zsh test.sh        
+1. TRY_BLOCK_ERROR: -1
+test.sh:5: no matches found: [[]]
+3.TRY_BLOCK_ERROR: 1
+always run
+</code></pre>
+
+<p>try-list 中，if 语句错误，try-list 中止执行，执行完 always-list 后，中止脚本。</p>
+
+<pre><code>bsd % cat test2.sh
+#! /usr/local/bin/zsh
+echo &quot;1. TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+{
+	if [[]];then
+		echo &quot;never run&quot;
+	fi	
+	echo &quot;2.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+} always
+{
+	echo &quot;3.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+	echo &quot;always run&quot;
+	TRY_BLOCK_ERROR=0
+}
+echo &quot;4.TRY_BLOCK_ERROR: $TRY_BLOCK_ERROR&quot;
+bsd % zsh test2.sh
+1. TRY_BLOCK_ERROR: -1
+test2.sh:5: no matches found: [[]]
+3.TRY_BLOCK_ERROR: 1
+always run
+4.TRY_BLOCK_ERROR: -1
+</code></pre>
+
+<p>always-list 中设置 <code>TRY_BLOCK_ERROR=0</code> 后，always 语句执行完，脚本仍然继续执行。always-list 外， <code>TRY_BLOCK_ERROR</code> 的值无关紧要，被设置为 <code>-1</code>。</p>
+
+<h2 id="syntax-function">function</h2>
+
+<p>一个函数可以有同时定义多个函数名</p>
+
+<pre><code>bsd % function func1 func2     
+function&gt; echo &quot;function with 2 names&quot;
+bsd % func1               
+function with 2 names
+bsd % func2
+function with 2 names
+bsd % 
+</code></pre>
+
+<p>可以用<code>()</code>，但<code>()</code>必须放名称列表的最后，函数体可以是 <code>{ list }</code> 或 <code>command</code>(只有一条指令时）,函数体不能是 <code>do ... done</code> 块。</p>
+
+<pre><code>bsd % function func3 func4 ()
+function&gt; do                        
+zsh: parse error near `do'             # 注: 不能使用 do ... done 块
+bsd % function func3 func4 ()
+function&gt; {
+function&gt; echo &quot;this is an other function with 2 name.&quot;
+function&gt; echo &quot;() must put on end of name list.&quot;
+function&gt; }
+bsd % func3                  
+this is an other function with 2 name.
+() must put on end of name list.
+bsd % func4
+this is an other function with 2 name.
+() must put on end of name list.
+bsd % function func5 () notafuncname;{echo &quot;this is not a function body&quot;} # 第15行:详见下面说明
+this is not a function body
+bsd % func5
+func5: command not found: notafuncname
+bsd % notafuncname   
+zsh: command not found: notafuncname
+</code></pre>
+
+<p>第15行：func5 后面的 <code>()</code> 终止函数名列表，notafuncname 被解释为 command (即函数体),而不是函数名。<code>;</code> 结束了前面一条语句，后面的 <code>{}</code> 表示一条新的语句（list）,这语句会立即执行，即输出第16行。</p>
+
+<p>第17行：原因如上，实际 func5 的函数体是命令notafuncname，实际不存在这个命令，所以 shell 报找不到命令的错误。</p>
+
+<p>另外：如果使用了 <code>()</code>，term 在语法上可以不再需要（如15行所示，不再举例）。</p>
+
+<h3 id="syntax-function-shglob">shglob 的影响</h3>
+
+<pre><code>bsd % cat test1.sh
+unsetopt shglob
+function test1 ( )     # ()之间有一个空格 
+{print &quot;not work&quot;}
+test1
+bsd % zsh test1.sh
+test1.sh:2: unknown file attribute:  
+bsd % cat test2.sh
+setopt shglob
+function aa ( )     # ()之间有一个空格 
+{print &quot;this work&quot;}
+this work
+bsd % zsh test2.sh
+this work
+</code></pre>
+
+<p>未设置 shglob 时，不要在<code>()</code>之间加上空白。</p>
+
+<p>不要在交互模式下打开shglob（除非你确定），这会引起zsh交互出现问题。</p>
+
+<pre><code>bsd % setopt shglob
+                        i
+No such widget `1:_zsh_highlight__zle-line-pre-redraw'
+</code></pre>
+
+<h2 id="syntax-alternate-shortloops">复杂命令的简短形式</h2>
+
+<p>shortloops 选项在csh、zsh模拟运行环境下已经默认开启。所以在 zsh 中，</p>
+
+<pre><code>bsd % if [[ true ]] print yes
+yes
+</code></pre>
+
+<p>以模拟兼容方式</p>
+
+<pre><code>bsd % cat test1.sh
+emulate ksh  # 或 setopt noshortloops
+if [[ true ]] print yes
+
+bsd % zsh test1.sh
+test1.sh:2: parse error near `print'
+
+bsd % cat test2.sh
+emulate csh # 或 emulate zsh
+if [[ true ]] print yes
+
+bsd % zsh test2.sh
+yes
+</code></pre>
+
+<h2 id="syntax-alias">别名</h2>
+
+<p>例3、例4，可能产生意料之外的作用，所以不建议开启 aliasfuncdef 选项。</p>
+
+<pre><code>bsd % setopt noaliasfuncdef
+bsd % alias ali1=ano1    # 例1
+bsd % ali1 () {print &quot;ok&quot;}  
+zsh: defining function based on alias `ali1'
+zsh: parse error near `()'
+bsd % ano1 () {print &quot;ok&quot;}
+bsd % ano1                
+ok
+bsd % setopt aliasfuncdef  
+bsd % alias ali2=ano2          # 例2
+bsd % ali2 () {print &quot;ok&quot;}
+bsd % ali2                
+ok
+bsd % ano2     
+ok
+bsd % alias ali3='ano3 ano4'    # 例3
+bsd % ali3 () {print 'ok'}  
+bsd % ali3                
+ok
+bsd % ano3  
+ok
+bsd % ano4
+ok
+bsd % alias ali5='ano5 -o'    # 例4
+bsd % ali5 (){print &quot;ok&quot;} 
+bsd % ano5               
+ok
+bsd % -o         
+ok
+</code></pre>
+
+</body>
+</html>
+

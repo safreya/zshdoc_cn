@@ -246,3 +246,39 @@ if [[ true ]] print yes
 bsd % zsh test2.sh
 yes
 ```
+
+## 别名 [syntax-alias]
+
+例3、例4，可能产生意料之外的作用，所以不建议开启 aliasfuncdef 选项。
+
+```
+bsd % setopt noaliasfuncdef
+bsd % alias ali1=ano1    # 例1
+bsd % ali1 () {print "ok"}  
+zsh: defining function based on alias `ali1'
+zsh: parse error near `()'
+bsd % ano1 () {print "ok"}
+bsd % ano1                
+ok
+bsd % setopt aliasfuncdef  
+bsd % alias ali2=ano2          # 例2
+bsd % ali2 () {print "ok"}
+bsd % ali2                
+ok
+bsd % ano2     
+ok
+bsd % alias ali3='ano3 ano4'    # 例3
+bsd % ali3 () {print 'ok'}  
+bsd % ali3                
+ok
+bsd % ano3  
+ok
+bsd % ano4
+ok
+bsd % alias ali5='ano5 -o'    # 例4
+bsd % ali5 (){print "ok"} 
+bsd % ano5               
+ok
+bsd % -o         
+ok
+```

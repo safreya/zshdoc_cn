@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-11 09:37+0800\n"
+"PO-Revision-Date: 2024-06-17 09:27+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3614,7 +3614,8 @@ msgstr ""
 msgid ""
 "It is an error for the function name, @var{word}, in the sh-compatible function definition syntax `@var{word} @t{()} ...' to be a word that resulted from alias expansion, unless the @t{ALIAS_FUNC_DEF} "
 "option is set."
-msgstr "除非设置了 @t{ALIAS_FUNC_DEF} 选项，否则 sh 兼容函数定义语法`@var{word} @t{()} ...' 中的函数名 @var{word}, 如果是由别名扩展产生的单词，则属于错误。"
+msgstr ""
+"除非设置了 @t{ALIAS_FUNC_DEF} 选项，否则 sh 兼容函数定义语法`@var{word} @t{()} ...' 中的函数名 @var{word}, 如果是由别名扩展产生的单词，则属于错误。@uref{comments/syntax.html#syntax-alias,[译注:语法.别名]}"
 
 #. type: findex
 #: zsh.texi:1862
