@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-17 09:27+0800\n"
+"PO-Revision-Date: 2024-06-19 15:09+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3667,7 +3667,7 @@ msgstr "任何保留字（@t{case}、@t{do}、@t{else} 等）"
 #. type: itemize
 #: zsh.texi:1888
 msgid "With global aliasing, any command separator, any redirection operator, and `@t{(}' or `@t{)}' when not part of a glob pattern"
-msgstr "使用全局别名、任何命令分隔符、任何重定向操作符，以及不属于全局模式的 `@t{(}' 或 `@t{)}' 时"
+msgstr "在全局别名定义下，任何命令分隔符、重定向操作符，以及不用作 glob 模式一部分时的 `@t{(}' 或 `@t{)}'"
 
 #. type: Plain text
 #: zsh.texi:1897
@@ -3675,8 +3675,8 @@ msgid ""
 "Alias expansion is done on the shell input before any other expansion except history expansion.  Therefore, if an alias is defined for the word @t{foo}, alias expansion may be avoided by quoting part of "
 "the word, e.g. @t{\\foo}.  Any form of quoting works, although there is nothing to prevent an alias being defined for the quoted form such as @t{\\foo} as well."
 msgstr ""
-"别名扩展是在历史扩展之后，其它扩展之前， 在 shell 输入上进行的。 因此，如果为单词 @t{foo} 定义了别名，可以通过引用单词的一部分来避免别名扩展，例如 @t{\\foo}。 任何形式的引号都可以使用，尽管没有什么可以阻止"
-"为 @t{\\foo} 这样的引号形式定义别名。"
+"别名扩展是在历史扩展之后，其它扩展之前， 在 shell 输入上进行的。 因此，如果为单词 @t{foo} 定义了别名，可以通过引用(转义)单词的一部分来避免别名扩展，例如 @t{\\foo}。 任何形式的引号(转义)都可以使用，尽管没有"
+"什么可以阻止为 @t{\\foo} 这样的引号(转义)形式定义别名。"
 
 #. type: Plain text
 #: zsh.texi:1901
