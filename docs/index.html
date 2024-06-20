@@ -1539,12 +1539,12 @@ local readonly typeset</code>
 </li><li>任何参数引用或命令替换
 </li><li>上述任何系列，连接时中间不留空白或其他符号
 </li><li>任何保留字（<code class="t">case</code>、<code class="t">do</code>、<code class="t">else</code> 等）
-</li><li>使用全局别名、任何命令分隔符、任何重定向操作符，以及不属于全局模式的 &lsquo;<code class="t">(</code>&rsquo; 或 &lsquo;<code class="t">)</code>&rsquo; 时
+</li><li>在全局别名定义下，任何命令分隔符、重定向操作符，以及不用作 glob 模式一部分时的 &lsquo;<code class="t">(</code>&rsquo; 或 &lsquo;<code class="t">)</code>&rsquo;
 </li></ul>
 
 <p>别名扩展是在历史扩展之后，其它扩展之前， 在 shell 输入上进行的。 因此，如果为单词 <code class="t">foo</code>
-定义了别名，可以通过引用单词的一部分来避免别名扩展，例如 <code class="t">\foo</code>。 任何形式的引号都可以使用，尽管没有什么可以阻止为 <code class="t">\foo</code>
-这样的引号形式定义别名。
+定义了别名，可以通过引用(转义)单词的一部分来避免别名扩展，例如 <code class="t">\foo</code>。 任何形式的引号(转义)都可以使用，尽管没有什么可以阻止为
+<code class="t">\foo</code> 这样的引号(转义)形式定义别名。
 </p>
 <p>特别要注意的是，使用 <code class="t">unalias</code> 删除全局别名时必须使用引号:
 </p>
@@ -1557,7 +1557,7 @@ unalias: no such hash table element: bar
 </pre></div>
 
 <p>设置 <code class="t">POSIX_ALIASES</code> 时，只有未加引号的普通字符串才有资格使用别名。 <code class="t">alias</code>
-内置命令不会拒绝不符合条件的别名，但不会对其进行扩展。
+内置命令不会拒绝不符合条件的别名，但不会对其进行扩展。<a class="uref" href="comments/syntax.html#syntax-alias-posixaliases">[译注:语法.alias.posixaliases]</a>
 </p>
 <p>补全会移除首部反斜线后的非特殊字符，来与补全一起使用，以单引号开头的引用可能更方便，例如 <code class="t">'foo</code>；补全会自动添加尾部的单引号。
 </p>
@@ -1611,7 +1611,7 @@ unalias: no such hash table element: bar
 
 <p>如果未设置 <code class="t">RC_QUOTES</code>，则除了换行符外不会输出任何内容；如果设置了 <code class="t">RC_QUOTES</code>，则会输出一个单引号。
 </p>
-<p>在双引号（<code class="t">&quot;&quot;</code>）内，会出现参数和命令替换， &lsquo;<code class="t">\</code>&rsquo; 会引出&quot;s &lsquo;<code class="t">\</code>&rsquo;, &lsquo;<code class="t">`</code>&rsquo;, &lsquo;<code class="t">&quot;</code>&rsquo;, &lsquo;<code class="t">$</code>&rsquo;和
+<p>在双引号（<code class="t">&quot;&quot;</code>）内，会出现参数和命令替换， &lsquo;<code class="t">\</code>&rsquo; 会引用 &lsquo;<code class="t">\</code>&rsquo;, &lsquo;<code class="t">`</code>&rsquo;, &lsquo;<code class="t">&quot;</code>&rsquo;, &lsquo;<code class="t">$</code>&rsquo;和
 <code class="t">$histchars</code> 的第一个字符（默认为 &lsquo;<code class="t">!</code>&rsquo;）。
 </p><hr>
 </div>
