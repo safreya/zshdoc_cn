@@ -297,8 +297,8 @@ bsd % a-a    # 使用posixaliases时，‘-’不能作为别名名称的字符�
 zsh: command not found: a-a
 ```
 
-posixaliases 的作用是确定别名能否使用posix规定外的扩展字符作为别名名称，参考POSIX_ALIASES 选项的说明。
+posixaliases 的作用是确定别名能否使用posix规定外的扩展字符作为别名名称，另请参考 POSIX_ALIASES 选项的说明。
 
-建议遵守 POSIX 标准为别名命名，而不是依赖这里的行为，作扩展或限制。
+别外，这个行为基于系统实现，即在不同的系统上可能不论 posixaliases 是否开启，别名都能正确扩展。所以可以在自己的系统上确认这个行为。同时，建议遵守 POSIX 标准为别名命名，而不是依赖这里的行为，作扩展或限制。
 
 
