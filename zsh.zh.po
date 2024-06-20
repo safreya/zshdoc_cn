@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-19 15:09+0800\n"
+"PO-Revision-Date: 2024-06-20 09:10+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -3702,7 +3702,9 @@ msgstr ""
 #. type: Plain text
 #: zsh.texi:1915
 msgid "When @t{POSIX_ALIASES} is set, only plain unquoted strings are eligible for aliasing.  The @t{alias} builtin does not reject ineligible aliases, but they are not expanded."
-msgstr "设置 @t{POSIX_ALIASES} 时，只有未加引号的普通字符串才有资格使用别名。 @t{alias} 内置命令不会拒绝不符合条件的别名，但不会对其进行扩展。"
+msgstr ""
+"设置 @t{POSIX_ALIASES} 时，只有未加引号的普通字符串才有资格使用别名。 @t{alias} 内置命令不会拒绝不符合条件的别名，但不会对其进行扩展。@uref{comments/syntax.html#syntax-alias-posixaliases,[译注:语法.alias."
+"posixaliases]}"
 
 #. type: Plain text
 #: zsh.texi:1921
@@ -3817,7 +3819,7 @@ msgstr "如果未设置 @t{RC_QUOTES}，则除了换行符外不会输出任何�
 msgid ""
 "Inside double quotes (@t{\"\"}), parameter and command substitution occur, and `@t{\\}' quotes the characters `@t{\\}', `@t{`}', `@t{\"}', `@t{$}', and the first character of @t{$histchars} (default "
 "`@t{!}')."
-msgstr "在双引号（@t{\"\"}）内，会出现参数和命令替换， `@t{\\}' 会引出\"s `@t{\\}', `@t{`}', `@t{\"}', `@t{$}'和 @t{$histchars} 的第一个字符（默认为 `@t{!}'）。"
+msgstr "在双引号（@t{\"\"}）内，会出现参数和命令替换， `@t{\\}' 会引用 `@t{\\}', `@t{`}', `@t{\"}', `@t{$}'和 @t{$histchars} 的第一个字符（默认为 `@t{!}'）。"
 
 #. type: node
 #: zsh.texi:2014 zsh.texi:2470 zsh.texi:2472 zsh.texi:2523

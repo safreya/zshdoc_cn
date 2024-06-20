@@ -282,3 +282,23 @@ ok
 bsd % -o         
 ok
 ```
+
+## 别名 posixaliases [syntax-alias-posixaliases]
+
+这里的话拗口难明，意思大致如下：
+
+```
+bsd % alias a-a="date"
+bsd % setopt noposixaliases  # 默认值，这里是为了明确状态
+bsd % a-a   # 没有使用posixaliases时，‘-’是可以用作为别名名称的扩展字符，可以正确扩展别名          
+2024年 6月20日 星期四 08时51分43秒 CST
+bsd % setopt posixaliases  
+bsd % a-a    # 使用posixaliases时，‘-’不能作为别名名称的字符，虽然可以定义，但不会进行扩展
+zsh: command not found: a-a
+```
+
+posixaliases 的作用是确定别名能否使用posix规定外的扩展字符作为别名名称，参考POSIX_ALIASES 选项的说明。
+
+建议遵守 POSIX 标准为别名命名，而不是依赖这里的行为，作扩展或限制。
+
+
