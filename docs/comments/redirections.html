@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+</head>
+<body>
+
+<h2 id="重定向">重定向</h2>
+
+<h3 id="redirections-order">顺序</h3>
+
+<p>在Shell中，重定向操作符的顺序是非常重要的。</p>
+
+<p>一 、 <code>... 1&gt;fname 2&gt;&amp;1</code></p>
+
+<p>这个命令通常用于将标准输出（文件描述符1）重定向到文件fname，然后将标准错误（文件描述符2）也重定向到与标准输出相同的位置。具体步骤如下：</p>
+
+<ul>
+<li>1&gt;fname: 这首先将标准输出重定向到文件fname。</li>
+<li>2&gt;&amp;1: 然后，这将标准错误重定向到当前标准输出。此时，标准输出已经被重定向到fname，因此标准错误也将被重定向到fname。</li>
+</ul>
+
+<p>结果：标准输出和标准错误都被写入到文件fname。</p>
+
+<p>二、 <code>... 2&gt;&amp;1 1&gt;fname</code></p>
+
+<p>这个命令的重定向顺序不同，效果也不同。具体步骤如下：</p>
+
+<ul>
+<li>2&gt;&amp;1: 这首先将标准错误重定向到当前标准输出。假设当前标准输出是终端，那么标准错误也会被重定向到终端。</li>
+<li>1&gt;fname: 然后，这将标准输出重定向到文件fname。此时，标准输出被重定向到文件，但标准错误仍然指向原来的标准输出（终端）。</li>
+</ul>
+
+<p>结果：标准输出被写入到文件fname，而标准错误被写入到终端。</p>
+
+<p>顺序非常重要，因为它决定了每个文件描述符在重定向后的目标位置。</p>
+
+</body>
+</html>
+

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-20 09:10+0800\n"
+"PO-Revision-Date: 2024-06-21 09:34+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4062,8 +4062,8 @@ msgid ""
 "(Except where `@t{>&} @var{word}' matches one of the above syntaxes; `@t{&>}' can always be used to avoid this ambiguity.)  Redirects both standard output and standard error (file descriptor 2)  in the "
 "manner of `@t{>} @var{word}'.  Note that this does @emph{not} have the same effect as `@t{>} @var{word} @t{2>&1}' in the presence of multios (see the section below)."
 msgstr ""
-"(除非 `@t{>&} @var{word}'与上述语法之一相匹配；`@t{&>}'可用于避免这种歧义）。 以 `@t{>} @var{word}'的方式重定向标准输出和标准错误（文件描述符 2）。@var{word}'的方式重定向标准输出和标准错误（文件描述符 "
-"2）。 请注意，这与存在 multios 时， `@t{>} @var{word} @t{2>&1}'的效果不同（见下文）。"
+"(除 `@t{>&} @var{word}'与上述语法之一相匹配；`@t{&>}' 总是可用于避免这种歧义）。 以 `@t{>} @var{word}' 的方式重定向标准输出和标准错误（文件描述符 2）。 请注意，这与存在 multios 时， `@t{>} @var{word} "
+"@t{2>&1}' 的效果@emph{不同}（见下文）。"
 
 #. type: item
 #: zsh.texi:2131
@@ -4160,8 +4160,8 @@ msgid ""
 "first associates file descriptor 1 with file @var{fname}.  It then associates file descriptor 2 with the file associated with file descriptor 1 (that is, @var{fname}).  If the order of redirections were "
 "reversed, file descriptor 2 would be associated with the terminal (assuming file descriptor 1 had been)  and then file descriptor 1 would be associated with file @var{fname}."
 msgstr ""
-"首先将文件描述符 1 与文件 @var{fname} 关联。 然后将文件描述符 2 与与文件描述符 1 相关联的文件（即 @var{fname}）关联起来。 如果重定向的顺序颠倒，文件描述符 2 将与终端关联（假设文件描述符 1 已经关联），然后"
-"文件描述符 1 将与文件 @var{fname} 关联。"
+"首先将文件描述符 1 与文件 @var{fname} 关联。 然后将文件描述符 2 和与文件描述符 1 相关联的文件（即 @var{fname}）关联起来。 如果重定向的顺序颠倒，文件描述符 2 将与终端关联（假设文件描述符 1 已经关联），然后"
+"文件描述符 1 将与文件 @var{fname} 关联。@uref{comments/redirections.html#redirections-order,[译注:重定向.顺序]}"
 
 #. type: Plain text
 #: zsh.texi:2180

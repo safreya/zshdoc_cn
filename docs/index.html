@@ -1694,9 +1694,9 @@ here-documents 中 <var class="var">word</var> 的使用，<var class="var">word
 </dd>
 <dt><code class="t">&gt;&amp;</code> <var class="var">word</var></dt>
 <dt><code class="t">&amp;&gt;</code> <var class="var">word</var></dt>
-<dd><p>(除非 &lsquo;<code class="t">&gt;&amp;</code> <var class="var">word</var>&rsquo;与上述语法之一相匹配；&lsquo;<code class="t">&amp;&gt;</code>&rsquo;可用于避免这种歧义）。 以 &lsquo;<code class="t">&gt;</code>
-<var class="var">word</var>&rsquo;的方式重定向标准输出和标准错误（文件描述符 2）。<var class="var">word</var>&rsquo;的方式重定向标准输出和标准错误（文件描述符 2）。
-请注意，这与存在 multios 时， &lsquo;<code class="t">&gt;</code> <var class="var">word</var> <code class="t">2&gt;&amp;1</code>&rsquo;的效果不同（见下文）。
+<dd><p>(除 &lsquo;<code class="t">&gt;&amp;</code> <var class="var">word</var>&rsquo;与上述语法之一相匹配；&lsquo;<code class="t">&amp;&gt;</code>&rsquo; 总是可用于避免这种歧义）。 以 &lsquo;<code class="t">&gt;</code> <var class="var">word</var>&rsquo;
+的方式重定向标准输出和标准错误（文件描述符 2）。 请注意，这与存在 multios 时， &lsquo;<code class="t">&gt;</code> <var class="var">word</var> <code class="t">2&gt;&amp;1</code>&rsquo;
+的效果<em class="emph">不同</em>（见下文）。
 </p>
 </dd>
 <dt><code class="t">&gt;&amp;|</code> <var class="var">word</var></dt>
@@ -1727,9 +1727,10 @@ here-documents 中 <var class="var">word</var> 的使用，<var class="var">word
 <p>... <code class="t">1&gt;</code><var class="var">fname</var> <code class="t">2&gt;&amp;1</code>
 </p></blockquote>
 
-<p>首先将文件描述符 1 与文件 <var class="var">fname</var> 关联。 然后将文件描述符 2 与与文件描述符 1 相关联的文件（即
+<p>首先将文件描述符 1 与文件 <var class="var">fname</var> 关联。 然后将文件描述符 2 和与文件描述符 1 相关联的文件（即
 <var class="var">fname</var>）关联起来。 如果重定向的顺序颠倒，文件描述符 2 将与终端关联（假设文件描述符 1 已经关联），然后文件描述符 1 将与文件
-<var class="var">fname</var> 关联。
+<var class="var">fname</var>
+关联。<a class="uref" href="comments/redirections.html#redirections-order">[译注:重定向.顺序]</a>
 </p>
 <p><a class="ref" href="#g_t_7b80_5355_547d_4ee4_548c_7ba1_9053">简单命令和管道</a> 中描述的 &lsquo;<code class="t">|&amp;</code>&rsquo; 命令分隔符是 &lsquo;<code class="t">2&gt;&amp;1 |</code>&rsquo;的简写。
 </p>
