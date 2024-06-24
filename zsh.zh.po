@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-21 09:34+0800\n"
+"PO-Revision-Date: 2024-06-24 09:28+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4231,7 +4231,9 @@ msgstr "语法 @t{@{}@var{varid}@t{@}>&-}，例如 @t{@{myfd@}>&-}，可用于�
 msgid ""
 "It is an error to open or close a file descriptor in this fashion when the parameter is readonly.  However, it is not an error to read or write a file descriptor using @t{<&$}@var{param} or @t{>&$}"
 "@var{param} if @var{param} is readonly."
-msgstr "当参数为只读时，以这种方式打开或关闭文件描述符是错误的。 不过，如果 @var{param} 为只读参数，则使用 @t{<&$}@var{param} 或 @t{>&$}@var{param} 读取或写入文件描述符不会出错。"
+msgstr ""
+"当参数为只读时，以这种方式打开或关闭文件描述符是错误的。 不过，如果 @var{param} 为只读参数，则使用 @t{<&$}@var{param} 或 @t{>&$}@var{param} 读取或写入文件描述符不会出错。@uref{comments/redirections."
+"html#redirections-fd-param-readonly,[译注:重定向.文件描述符.只读参数]}"
 
 #. type: Plain text
 #: zsh.texi:2233

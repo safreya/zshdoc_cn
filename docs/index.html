@@ -1758,7 +1758,8 @@ shell 标识符代替运算符前的数字。 shell 将打开一个新的文件�
 需要注意的是，在这种情况下，<var class="var">varid</var> 给出的参数必须事先设置为文件描述符。
 </p>
 <p>当参数为只读时，以这种方式打开或关闭文件描述符是错误的。 不过，如果 <var class="var">param</var> 为只读参数，则使用 <code class="t">&lt;&amp;$</code><var class="var">param</var>
-或 <code class="t">&gt;&amp;$</code><var class="var">param</var> 读取或写入文件描述符不会出错。
+或 <code class="t">&gt;&amp;$</code><var class="var">param</var>
+读取或写入文件描述符不会出错。<a class="uref" href="comments/redirections.html#redirections-fd-param-readonly">[译注:重定向.文件描述符.只读参数]</a>
 </p>
 <p>如果未设置选项 <code class="t">CLOBBER</code>，如果参数是一个打开的文件描述符的（通过本机制已经分配的），通过该参数打开文件描述符是错误的。
 在使用该参数分配文件描述符前取消参数设置，就不会出错。
