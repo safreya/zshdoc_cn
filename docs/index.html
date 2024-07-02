@@ -1976,7 +1976,7 @@ shell 中作业的一部分运行：
 <a class="index-entry-id" id="index-autoload_002c-use-of"></a>
 <a class="index-entry-id" id="index-fpath_002c-use-of"></a>
 <p>可以使用 <code class="t">autoload</code> 内置命令（或 &lsquo;<code class="t">functions -u</code>&rsquo; 或 &lsquo;<code class="t">typeset -fu</code>&rsquo;）将函数标记为
-<em class="emph">未定义的</em>。 这样的函数没有主体。 第一次执行函数时，shell 会使用 <code class="t">fpath</code> 变量的元素搜索函数的定义。
+<em class="emph">未定义的</em> <a class="uref" href="comments/functions.html#function-autoload-undefined">[译注:函数.自动加载.未定义的]</a>。 这样的函数没有主体。 第一次执行函数时，shell 会使用 <code class="t">fpath</code> 变量的元素搜索函数的定义。
 因此，定义自动加载函数的典型顺序是
 </p>
 <div class="example">
@@ -2019,7 +2019,7 @@ autoload myfunc1 myfunc2 ...
 </p>
 <a class="index-entry-id" id="index-KSH_005fAUTOLOAD_002c-use-of"></a>
 <p>如果设置了 <code class="t">KSH_AUTOLOAD</code>选项，或者文件只包含函数的简单定义，文件内容将被执行。
-这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果没有通过加载文件定义函数，则会出错。
+这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果加载文件时，没有定义函数，则会出错。
 </p>
 <p>否则，函数体（周围没有&lsquo;<var class="var">funcname</var><code class="t">()
 {</code><var class="var">...</var><code class="t">}</code>&rsquo;）将被视为文件的完整内容。这种形式允许将文件直接用作可执行 shell 脚本。

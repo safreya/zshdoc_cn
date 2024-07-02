@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+</head>
+<body>
+
+<h1 id="函数">函数</h1>
+
+<h2 id="function-autoload-undefined">自动加载</h2>
+
+<p>autoload 标记的函数在第一次运行前是未定义的，autoload 告诉 zsh，存在这样一个函数，可以在定义的位置找到。</p>
+
+<pre><code>~ % cat testfunc/myfunc1
+echo &quot;This is function 1.&quot;
+
+~ % FPATH=$FPATH:~/testfunc       # 把函数搜索路径加入 fpath 数组
+~ % echo &quot;$FPATH&quot;                 # 检查路径
+/usr/local/share/zsh/site-functions: ...省略... :/home/xxx/testfunc
+~ % autoload myfunc1              # 把 myfunc1 标记为“未定义的”
+~ % functions myfunc1             # functions 内置命令查看函数定义，此时还没有运行过函数，是未定义的
+myfunc1 () {
+        # undefined
+        builtin autoload -X
+}
+~ % myfunc1                       # 第一次运行函数
+This is function 1.
+~ % functions myfunc1             # 再次查看函数定义，此时函数已经真正定义
+myfunc1 () {
+        echo &quot;This is function 1.&quot;
+}
+</code></pre>
+
+</body>
+</html>
+

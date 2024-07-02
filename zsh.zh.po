@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-06-24 09:28+0800\n"
+"PO-Revision-Date: 2024-07-02 14:03+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4759,8 +4759,8 @@ msgid ""
 "A function can be marked as @emph{undefined} using the @t{autoload} builtin (or `@t{functions -u}' or `@t{typeset -fu}').  Such a function has no body.  When the function is first executed, the shell "
 "searches for its definition using the elements of the @t{fpath} variable.  Thus to define functions for autoloading, a typical sequence is:"
 msgstr ""
-"可以使用 @t{autoload} 内置命令（或 `@t{functions -u}' 或 `@t{typeset -fu}'）将函数标记为 @emph{未定义的}。 这样的函数没有主体。 第一次执行函数时，shell 会使用 @t{fpath} 变量的元素搜索函数的定义。 因此，定"
-"义自动加载函数的典型顺序是"
+"可以使用 @t{autoload} 内置命令（或 `@t{functions -u}' 或 `@t{typeset -fu}'）将函数标记为 @emph{未定义的} @uref{comments/functions.html#function-autoload-undefined, [译注:函数.自动加载.未定义的]}。 这样的函"
+"数没有主体。 第一次执行函数时，shell 会使用 @t{fpath} 变量的元素搜索函数的定义。 因此，定义自动加载函数的典型顺序是"
 
 #. type: example
 #: zsh.texi:2573
@@ -4868,7 +4868,7 @@ msgid ""
 "If the @t{KSH_AUTOLOAD} option is set, or the file contains only a simple definition of the function, the file's contents will be executed.  This will normally define the function in question, but may "
 "also perform initialization, which is executed in the context of the function execution, and may therefore define local parameters.  It is an error if the function is not defined by loading the file."
 msgstr ""
-"如果设置了 @t{KSH_AUTOLOAD}选项，或者文件只包含函数的简单定义，文件内容将被执行。 这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果没有通过加载文件"
+"如果设置了 @t{KSH_AUTOLOAD}选项，或者文件只包含函数的简单定义，文件内容将被执行。 这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果加载文件时，没有"
 "定义函数，则会出错。"
 
 #. type: Plain text
