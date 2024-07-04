@@ -527,7 +527,7 @@ ul.toc-numbered-mark {list-style: none}
 <p>(HTML 版本通过 <cite class="cite">texi2html</cite> 生成，可从
 <code class="t"><a class="uref" href="http://www.nongnu.org/texi2html/">http://www.nongnu.org/texi2html/</a></code> 获取。命令为&lsquo;<code class="t">texi2html --output .
 --ifinfo --split=chapter --node-files zsh.texi</code>&rsquo;。 如有必要，请升级至 1.78 版
-texi2html）。
+texi2html）
 </p>
 </dd>
 </dl>
@@ -712,7 +712,7 @@ shell FAQ <code class="t"><a class="uref" href="https://www.zsh.org/FAQ/">https:
 <div class="subsection-level-extent" id="Kuo-Zhan-Xing-Bian-Ji-Qi-">
 <h4 class="subsection"><span>3.2.2 扩展行编辑器<a class="copiable-link" href="#Kuo-Zhan-Xing-Bian-Ji-Qi-"> &para;</a></span></h4>
 
-<p>除补全功能外，行编辑器还可通过 shell 函数进行高度扩展。 shell 提供了一些有用的功能，如
+<p>除补全功能外，行编辑器还可通过 shell 函数进行高度扩展。 shell 提供了一些有用的功能，如:
 </p>
 <dl class="table">
 <dt><code class="t">insert-composed-char</code></dt>
@@ -1531,7 +1531,7 @@ local readonly typeset</code>
 <a class="index-entry-id" id="index-aliases_002c-global"></a>
 <p>使用 <code class="t">alias</code> 内置命令可定义别名；使用 <code class="t">-g</code> 选项可定义全局别名。
 </p>
-<p>一个 <em class="emph">word</em> 的定义是
+<p>一个 <em class="emph">word</em> 的定义是:
 </p>
 <ul class="itemize mark-bullet">
 <li>任何普通字符串或 glob 模式
@@ -2027,7 +2027,7 @@ autoload myfunc1 myfunc2 ...
 执行初始化，然后调用所定义的函数，文件除了包含初始化代码（执行后丢弃）外，还应包含完整的函数定义（保留用于后续函数调用），以及对 shell
 函数的调用，包括最后的参数。
 </p>
-<p>For example, suppose the autoload file <code class="t">func</code> contains
+<p>例如, 假设自动加载文件 <code class="t">func</code> 包含
 </p>
 <div class="example">
 <pre class="example-preformatted">func() { print This is func; }
