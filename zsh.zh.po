@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-04 13:58+0800\n"
+"PO-Revision-Date: 2024-07-04 20:03+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -1034,7 +1034,7 @@ msgid ""
 "zsh.texi}'.  If necessary, upgrade to version 1.78 of texi2html.)"
 msgstr ""
 "(HTML 版本通过 @cite{texi2html} 生成，可从 @t{@uref{http://www.nongnu.org/texi2html/}} 获取。命令为`@t{texi2html --output .  --ifinfo --split=chapter --node-files zsh.texi}'。 如有必要，请升级至 1.78 版 "
-"texi2html）。"
+"texi2html）"
 
 #. type: Plain text
 #: zsh.texi:350
@@ -1423,7 +1423,7 @@ msgstr "扩展行编辑器"
 #. type: Plain text
 #: zsh.texi:626
 msgid "Apart from completion, the line editor is highly extensible by means of shell functions.  Some useful functions are provided with the shell; they provide facilities such as:"
-msgstr "除补全功能外，行编辑器还可通过 shell 函数进行高度扩展。 shell 提供了一些有用的功能，如"
+msgstr "除补全功能外，行编辑器还可通过 shell 函数进行高度扩展。 shell 提供了一些有用的功能，如:"
 
 #. type: t{#1}
 #: zsh.texi:629 zsh.texi:38722 zsh.texi:38723
@@ -3637,7 +3637,7 @@ msgstr "使用 @t{alias} 内置命令可定义别名；使用 @t{-g} 选项可�
 #. type: Plain text
 #: zsh.texi:1869
 msgid "A @emph{word} is defined as:"
-msgstr "一个 @emph{word} 的定义是"
+msgstr "一个 @emph{word} 的定义是:"
 
 #. type: itemize
 #: zsh.texi:1875
