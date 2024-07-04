@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-02 14:03+0800\n"
+"PO-Revision-Date: 2024-07-04 13:58+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4885,7 +4885,7 @@ msgstr ""
 #. type: Plain text
 #: zsh.texi:2650
 msgid "For example, suppose the autoload file @t{func} contains"
-msgstr "For example, suppose the autoload file @t{func} contains"
+msgstr "例如, 假设自动加载文件 @t{func} 包含"
 
 #. type: example
 #: zsh.texi:2655
