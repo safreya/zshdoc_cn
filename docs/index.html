@@ -1984,7 +1984,9 @@ shell 中作业的一部分运行：
 autoload myfunc1 myfunc2 ...
 </pre></div>
 
-<p>如果 <code class="t">autoload</code> 内置命令或其等效命令的选项为 <code class="t">-U</code>，读取过程中通常的别名扩展将被抑制。建议使用 zsh 发行版提供的函数。
+<p>如果 <code class="t">autoload</code> 内置命令或其等效命令的选项为
+<code class="t">-U</code>，读取过程中通常的别名扩展将被抑制<a class="uref" href="comments/functions.html#function-autoload-alias">[译注:函数.autoload.抑制别名扩展]</a>。建议使用
+zsh 发行版提供的函数。
 <a class="index-entry-id" id="index-zcompile_002c-use-of"></a>
 请注意，对于使用 <code class="t">zcompile</code> 内置命令预编译的函数，必须在创建 <code class="t">.zwc</code> 文件时提供 <code class="t">-U</code> 标记，因为相应的信息会编译到
 <code class="t">.zwc</code> 文件中。
