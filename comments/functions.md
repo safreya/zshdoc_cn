@@ -70,3 +70,49 @@ func1 () {
 ```
 
 在函数定义中不建议用别名，以免别名发生变化时产生不可预料的问题
+
+## KSH_AUTOLOAD 的影响 [function-autoload-kshautoload]
+
+例1:
+
+```
+~ % zsh -f    # 使用zsh -f启动Zsh时，不会加载任何额外的配置，以“干净”的状态下启动
+bsd% cat testfunc/myfunc1
+echo "my func1"
+bsd% FPATH=$FPATH:~/testfunc
+bsd% autoload -U myfunc1
+bsd% myfunc1
+my func1
+```
+
+例2:
+
+```
+~ % zsh -f
+bsd% cat testfunc/myfunc1
+echo "my func1"
+bsd% FPATH=$FPATH:~/testfunc
+bsd% setopt kshautoload    # 开启 KSH_AUTOLOAD
+bsd% autoload -U myfunc1
+bsd% myfunc1
+my func1              # 文件中的语句得到执行
+zsh: myfunc1: function not defined by file   # 但并没有定义函数
+```
+
+例3:
+
+```
+~ % zsh -f
+bsd% cat testfunc/myfunc2             # 用 function 语句定义 myfunc2
+function myfunc2 {
+        echo "my func2"
+}
+bsd% FPATH=$FPATH:~/testfunc
+bsd% setopt kshautoload
+bsd% autoload -U myfunc2
+bsd% myfunc2                        # 定义成功
+my func2
+```
+
+在没有设置 `KSH_AUTOLOAD` 时，定义文件的内容，就是函数的函数体。设置 `KSH_AUTOLOAD` 后，通过执行文件内容定义函数（相当于脚本），要使用函数定义语法。
+

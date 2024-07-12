@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-04 20:33+0800\n"
+"PO-Revision-Date: 2024-07-12 09:30+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4871,7 +4871,7 @@ msgid ""
 "also perform initialization, which is executed in the context of the function execution, and may therefore define local parameters.  It is an error if the function is not defined by loading the file."
 msgstr ""
 "如果设置了 @t{KSH_AUTOLOAD}选项，或者文件只包含函数的简单定义，文件内容将被执行。 这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果加载文件时，没有"
-"定义函数，则会出错。"
+"定义函数，则会出错。@uref{comments/functions.html#function-autoload-kshautoload,[译注:函数.autoload.kshautoload]}"
 
 #. type: Plain text
 #: zsh.texi:2647

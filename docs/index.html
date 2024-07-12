@@ -2021,7 +2021,8 @@ zsh 发行版提供的函数。
 </p>
 <a class="index-entry-id" id="index-KSH_005fAUTOLOAD_002c-use-of"></a>
 <p>如果设置了 <code class="t">KSH_AUTOLOAD</code>选项，或者文件只包含函数的简单定义，文件内容将被执行。
-这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果加载文件时，没有定义函数，则会出错。
+这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。
+如果加载文件时，没有定义函数，则会出错。<a class="uref" href="comments/functions.html#function-autoload-kshautoload">[译注:函数.autoload.kshautoload]</a>
 </p>
 <p>否则，函数体（周围没有&lsquo;<var class="var">funcname</var><code class="t">()
 {</code><var class="var">...</var><code class="t">}</code>&rsquo;）将被视为文件的完整内容。这种形式允许将文件直接用作可执行 shell 脚本。
