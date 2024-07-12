@@ -73,10 +73,46 @@ func1 () {
 
 ## KSH_AUTOLOAD 的影响 [function-autoload-kshautoload]
 
+原文例子摘录在下面，一定要看：
+
+```
+func() { print This is func; }
+print func is initialized
+```
+
+实验输出如下：
+
+```
+~ % zsh -f   # 使用zsh -f启动Zsh时，不会加载任何额外的配置，以“干净”的状态下启动
+bsd% autoload -U func
+bsd% func
+func is initialized
+bsd% func
+this is func
+bsd% func
+this is func
+bsd%
+~ % zsh -f
+bsd% FPATH=$FPATH:~/testfunc
+bsd% autoload -U func
+bsd% setopt kshautoload
+bsd% func
+func is initialized
+this is func
+bsd% func
+this is func
+bsd%
+```
+
+1：第一次调用函数时，func 文件都会被执行，不同的是，设置了 kshautoload 时，执行文件内容后 zsh 会调用定义后的 func 函数，而不设置 kshautoload 时，则不会。 之后调用函数，都会调用定义后的函数 func。
+ 
+2：如果func 文件中没有函数定义语句，那么在没有设置 `KSH_AUTOLOAD` 时，文件 func 的内容，就是函数的函数体。如果func 文件中没有函数定义语句，但是设置了 `KSH_AUTOLOAD` ，那么会执行文件内容，但提示不能定义函数。参考下面例子：
+
+
 例1:
 
 ```
-~ % zsh -f    # 使用zsh -f启动Zsh时，不会加载任何额外的配置，以“干净”的状态下启动
+~ % zsh -f   
 bsd% cat testfunc/myfunc1
 echo "my func1"
 bsd% FPATH=$FPATH:~/testfunc
@@ -97,6 +133,11 @@ bsd% autoload -U myfunc1
 bsd% myfunc1
 my func1              # 文件中的语句得到执行
 zsh: myfunc1: function not defined by file   # 但并没有定义函数
+bsd% functions myfunc1
+myfunc1 () {
+        # undefined
+        builtin autoload -XU
+}
 ```
 
 例3:
@@ -114,5 +155,4 @@ bsd% myfunc2                        # 定义成功
 my func2
 ```
 
-在没有设置 `KSH_AUTOLOAD` 时，定义文件的内容，就是函数的函数体。设置 `KSH_AUTOLOAD` 后，通过执行文件内容定义函数（相当于脚本），要使用函数定义语法。
 

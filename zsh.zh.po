@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-12 09:30+0800\n"
+"PO-Revision-Date: 2024-07-12 10:08+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -4871,7 +4871,7 @@ msgid ""
 "also perform initialization, which is executed in the context of the function execution, and may therefore define local parameters.  It is an error if the function is not defined by loading the file."
 msgstr ""
 "如果设置了 @t{KSH_AUTOLOAD}选项，或者文件只包含函数的简单定义，文件内容将被执行。 这通常会定义相关函数，但也可能执行初始化，初始化是在函数执行的上下文中执行的，因此可能会定义本地参数。 如果加载文件时，没有"
-"定义函数，则会出错。@uref{comments/functions.html#function-autoload-kshautoload,[译注:函数.autoload.kshautoload]}"
+"定义函数，则会出错。"
 
 #. type: Plain text
 #: zsh.texi:2647
@@ -4897,7 +4897,7 @@ msgid ""
 "print func is initialized\n"
 msgstr ""
 "func() @{ print This is func; @}\n"
-"输出 func is initialized\n"
+"print func is initialized\n"
 
 #. type: Plain text
 #: zsh.texi:2663
@@ -4906,7 +4906,7 @@ msgid ""
 "will produce the initialization message on the first call, and the other message on the second and subsequent calls."
 msgstr ""
 "那么，如果设置了 @t{KSH_AUTOLOAD}，`@t{func; func}' 将在第一次调用时产生两条信息，但在第二次及其后的调用中只产生`@t{This is func}' 信息。 如果未设置 @t{KSH_AUTOLOAD}，则第一次调用时将产生初始化信息，第二次"
-"及后续调用时将产生其他信息。"
+"及后续调用时将产生其他信息。@uref{comments/functions.html#function-autoload-kshautoload,[译注:函数.autoload.kshautoload]}"
 
 #. type: Plain text
 #: zsh.texi:2669
