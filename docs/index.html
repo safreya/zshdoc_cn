@@ -2345,7 +2345,7 @@ shell 通常会提示作业已被 &lsquo;暂停&rsquo;，并打印另一个提�
 通常情况下，每当作业被阻塞，无法继续执行时，它都会通知您。 如果未设置 <code class="t">NOTIFY</code> 选项(注：默认打开），程序会等到打印提示之前才通知你。
 所有此类通知都会直接发送到终端，而不是标准输出或标准错误。
 </p>
-<p>开启监控模式后，每个完成的后台任务都会触发为 <code class="t">CHLD</code> 设置的陷阱。(注：表示子 shell 状态发生变化的信号）
+<p>开启监控模式后，每个完成的后台任务都会触发为 <code class="t">CHLD</code> 设置的陷阱。(注：表示子 shell 状态发生变化的信号)
 </p>
 <p>当作业正在运行或暂停时，如果尝试离开 shell，系统会警告您 &lsquo;You have suspended (running) jobs&rsquo;。 您可以使用
 <code class="t">jobs</code> 命令查看这些作业。 如果这样做或立即再次尝试退出，shell 不会再发出警告；暂停的作业将被终止，如果设置了 <code class="t">HUP</code>

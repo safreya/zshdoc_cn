@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-22 15:14+0800\n"
+"PO-Revision-Date: 2024-07-22 15:45+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -5724,7 +5724,7 @@ msgstr "通常情况下，每当作业被阻塞，无法继续执行时，它都
 #. type: Plain text
 #: zsh.texi:3142
 msgid "When the monitor mode is on, each background job that completes triggers any trap set for @t{CHLD}."
-msgstr "开启监控模式后，每个完成的后台任务都会触发为 @t{CHLD} 设置的陷阱。(注：表示子 shell 状态发生变化的信号）"
+msgstr "开启监控模式后，每个完成的后台任务都会触发为 @t{CHLD} 设置的陷阱。(注：表示子 shell 状态发生变化的信号)"
 
 #. type: Plain text
 #: zsh.texi:3151
