@@ -2105,8 +2105,8 @@ print &quot;I am $variable&quot;
 <p>输出如下:
 </p>
 <div class="example">
-<pre class="example-preformatted">我在里面争论这个争论那个
-我在外面
+<pre class="example-preformatted">I am inside with arguments this and that
+I am outside
 </pre></div>
 
 <p>需要注意的是，如果函数定义的参数扩展为空值，例如 &lsquo;<code class="t">name=; function $name { </code><var class="var">...</var><code class="t">
@@ -2283,8 +2283,8 @@ shell 会尝试依次执行函数 &lsquo;<code class="t">chpwd</code>&rsquo;, &l
 
 <p>表明异步启动的任务是任务编号 1，有一个（顶级）进程，其进程 ID 是 1234。
 </p>
-<p>如果作业以 &lsquo;<code class="t">&amp;|</code>&rsquo;或 &lsquo;<code class="t">&amp;!</code>&rsquo;启动，则该作业会立即被取消（disowned,可能指放弃所有权）。
-启动后，它在作业表中没有位置，也不受此处描述的作业控制功能的约束。
+<p>如果作业以 &lsquo;<code class="t">&amp;|</code>&rsquo;或 &lsquo;<code class="t">&amp;!</code>&rsquo;启动，则该作业会立即被取消（与 shell 的）关联（disowned, 可以理解成从 shell
+中分离进程）。 启动后，它在作业表中没有位置，也不受此处描述的作业控制功能的约束。
 </p>
 <p>如果您正在运行一项作业，并希望做其他事情，可以按 ^Z 键（control-Z），向当前作业发送 <code class="t">TSTP</code> 信号：该键可以通过外部
 <code class="t">stty</code> 命令的 <code class="t">susp</code> 选项重新定义。
@@ -2340,16 +2340,16 @@ shell 通常会提示作业已被 &lsquo;暂停&rsquo;，并打印另一个提�
 </p></dd>
 </dl>
 
-<p>每当进程改变状态，shell 就会立即学习。
+<p>每当进程改变状态，shell 就会立即得知。
 <a class="index-entry-id" id="index-NOTIFY_002c-use-of"></a>
-通常情况下，每当作业被阻塞，无法继续执行时，它都会通知您。 如果未设置 <code class="t">NOTIFY</code> 选项，程序会等到打印提示之前才通知你。
+通常情况下，每当作业被阻塞，无法继续执行时，它都会通知您。 如果未设置 <code class="t">NOTIFY</code> 选项(注：默认打开），程序会等到打印提示之前才通知你。
 所有此类通知都会直接发送到终端，而不是标准输出或标准错误。
 </p>
-<p>开启监控模式后，每个完成的后台任务都会触发为 <code class="t">CHLD</code> 设置的陷阱。
+<p>开启监控模式后，每个完成的后台任务都会触发为 <code class="t">CHLD</code> 设置的陷阱。(注：表示子 shell 状态发生变化的信号）
 </p>
 <p>当作业正在运行或暂停时，如果尝试离开 shell，系统会警告您 &lsquo;You have suspended (running) jobs&rsquo;。 您可以使用
 <code class="t">jobs</code> 命令查看这些作业。 如果这样做或立即再次尝试退出，shell 不会再发出警告；暂停的作业将被终止，如果设置了 <code class="t">HUP</code>
-选项，正在运行的作业将被发送 <code class="t">SIGHUP</code> 信号。
+选项，将向正在运行的作业发送 <code class="t">SIGHUP</code> 信号。
 <a class="index-entry-id" id="index-HUP_002c-use-of"></a>
 </p>
 <a class="index-entry-id" id="index-jobs_002c-disowning"></a>

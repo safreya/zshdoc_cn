@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-22 08:46+0800\n"
+"PO-Revision-Date: 2024-07-22 15:14+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -5516,7 +5516,7 @@ msgstr "表明异步启动的任务是任务编号 1，有一个（顶级）进�
 msgid ""
 "If a job is started with `@t{&|}' or `@t{&!}', then that job is immediately disowned.  After startup, it does not have a place in the job table, and is not subject to the job control features described "
 "here."
-msgstr "如果作业以 `@t{&|}'或 `@t{&!}'启动，则该作业会立即被取消（disowned,可能指放弃所有权）。 启动后，它在作业表中没有位置，也不受此处描述的作业控制功能的约束。"
+msgstr "如果作业以 `@t{&|}'或 `@t{&!}'启动，则该作业会立即被取消（与 shell 的）关联（disowned, 可以理解成从 shell 中分离进程）。 启动后，它在作业表中没有位置，也不受此处描述的作业控制功能的约束。"
 
 #. type: Plain text
 #: zsh.texi:3053
@@ -5706,7 +5706,7 @@ msgstr "上一个作业。"
 #. type: Plain text
 #: zsh.texi:3132
 msgid "The shell learns immediately whenever a process changes state."
-msgstr "每当进程改变状态，shell 就会立即学习。"
+msgstr "每当进程改变状态，shell 就会立即得知。"
 
 #. type: pindex
 #: zsh.texi:3132
@@ -5719,12 +5719,12 @@ msgstr "NOTIFY, use of"
 msgid ""
 "It normally informs you whenever a job becomes blocked so that no further progress is possible.  If the @t{NOTIFY} option is not set, it waits until just before it prints a prompt before it informs you.  "
 "All such notifications are sent directly to the terminal, not to the standard output or standard error."
-msgstr "通常情况下，每当作业被阻塞，无法继续执行时，它都会通知您。 如果未设置 @t{NOTIFY} 选项，程序会等到打印提示之前才通知你。 所有此类通知都会直接发送到终端，而不是标准输出或标准错误。"
+msgstr "通常情况下，每当作业被阻塞，无法继续执行时，它都会通知您。 如果未设置 @t{NOTIFY} 选项(注：默认打开），程序会等到打印提示之前才通知你。 所有此类通知都会直接发送到终端，而不是标准输出或标准错误。"
 
 #. type: Plain text
 #: zsh.texi:3142
 msgid "When the monitor mode is on, each background job that completes triggers any trap set for @t{CHLD}."
-msgstr "开启监控模式后，每个完成的后台任务都会触发为 @t{CHLD} 设置的陷阱。"
+msgstr "开启监控模式后，每个完成的后台任务都会触发为 @t{CHLD} 设置的陷阱。(注：表示子 shell 状态发生变化的信号）"
 
 #. type: Plain text
 #: zsh.texi:3151
@@ -5733,7 +5733,7 @@ msgid ""
 "immediately try to exit again, the shell will not warn you a second time; the suspended jobs will be terminated, and the running jobs will be sent a @t{SIGHUP} signal, if the @t{HUP} option is set."
 msgstr ""
 "当作业正在运行或暂停时，如果尝试离开 shell，系统会警告您 `You have suspended (running) jobs'。 您可以使用 @t{jobs} 命令查看这些作业。 如果这样做或立即再次尝试退出，shell 不会再发出警告；暂停的作业将被终"
-"止，如果设置了 @t{HUP} 选项，正在运行的作业将被发送 @t{SIGHUP} 信号。"
+"止，如果设置了 @t{HUP} 选项，将向正在运行的作业发送 @t{SIGHUP} 信号。"
 
 #. type: pindex
 #: zsh.texi:3151
