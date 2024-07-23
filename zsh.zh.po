@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-22 15:45+0800\n"
+"PO-Revision-Date: 2024-07-23 16:17+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -5947,8 +5947,8 @@ msgid ""
 "The @var{base} may be replaced or followed by an underscore, which may itself be followed by a positive integer (if it is missing the value 3 is used).  This indicates that underscores should be inserted "
 "into the output string, grouping the number for visual clarity.  The following integer specifies the number of digits to group together.  For example:"
 msgstr ""
-"@var{base} 可以用下划线代替或跟在下划线后面，下划线后面可以是一个正整数（如果没有下划线，则使用值 3）。 这表示应在输出字符串中插入下划线，对数字进行分组，以便视觉清晰。 下面的整数指定了要组合在一起的数字个"
-"数。 例如"
+"@var{base} 可以用下划线代替或跟在下划线后面，下划线后面可以是一个正整数（如果没有正整数，则使用值 3）。 这表示应在输出字符串中插入下划线，对数字进行分组，以便视觉清晰。 跟随的整数指定了分组的数字个数。 例"
+"如："
 
 #. type: example
 #: zsh.texi:3293
@@ -5968,7 +5968,7 @@ msgstr "输出 `@t{0x1_0000_0000}'."
 #. type: Plain text
 #: zsh.texi:3302
 msgid "The feature can be used with floating point numbers, in which case the base must be omitted; grouping is away from the decimal point.  For example,"
-msgstr "该功能可用于浮点数，在这种情况下，必须省略基数；分组远离小数点。 例如"
+msgstr "该功能可用于浮点数，在这种情况下，必须省略基数；分组以远离小数点的方向进行。 例如，"
 
 #. type: example
 #: zsh.texi:3307
@@ -6055,7 +6055,7 @@ msgstr "+ - ! ~ ++ --"
 #. type: table
 #: zsh.texi:3351 zsh.texi:3396
 msgid "unary plus/minus, logical NOT, complement, @{pre,post@}@{in,de@}crement"
-msgstr "一元加/减、逻辑 NOT、补码、@{pre,post@}@{in,de@}crement"
+msgstr "一元加/减、逻辑 NOT、补码、@{前,后@}缀自@{增,减@}运算符"
 
 #. type: t{#1}
 #: zsh.texi:3351 zsh.texi:3402
@@ -6317,7 +6317,7 @@ msgstr "integer, use of"
 #: zsh.texi:3479
 msgid ""
 "Arithmetic evaluation is performed on the value of each assignment to a named parameter declared integer in this manner.  Assigning a floating point number to an integer results in rounding towards zero."
-msgstr "以这种方式对声明的整数型的命名参数，每次赋值都进行算术运算。 将浮点数赋值给整数会导致四舍五入为零。(?)"
+msgstr "以这种方式对声明的整数型的命名参数，每次赋值都进行算术运算。 将浮点数赋值给整数会导致四舍五入到零。(?)"
 
 #. type: cindex
 #: zsh.texi:3481

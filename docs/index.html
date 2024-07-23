@@ -2429,8 +2429,8 @@ print $x $y
 <p>首先输出&lsquo;<code class="t">8#40</code>&rsquo;，即给定输出基数中最右边的值，然后输出 &lsquo;<code class="t">8#40 16#20</code>&rsquo;，因为 <code class="t">y</code> 已明确声明输出基数为 16，而
 <code class="t">x</code>（假设它不存在）是通过算术运算隐式键入的，在算术运算中它获得输出基数为 8。
 </p>
-<p><var class="var">base</var> 可以用下划线代替或跟在下划线后面，下划线后面可以是一个正整数（如果没有下划线，则使用值 3）。
-这表示应在输出字符串中插入下划线，对数字进行分组，以便视觉清晰。 下面的整数指定了要组合在一起的数字个数。 例如
+<p><var class="var">base</var> 可以用下划线代替或跟在下划线后面，下划线后面可以是一个正整数（如果没有正整数，则使用值 3）。
+这表示应在输出字符串中插入下划线，对数字进行分组，以便视觉清晰。 跟随的整数指定了分组的数字个数。 例如：
 </p>
 <div class="example">
 <pre class="example-preformatted">setopt cbases
@@ -2439,7 +2439,7 @@ print $(( [#16_4] 65536 ** 2 ))
 
 <p>输出 &lsquo;<code class="t">0x1_0000_0000</code>&rsquo;.
 </p>
-<p>该功能可用于浮点数，在这种情况下，必须省略基数；分组远离小数点。 例如
+<p>该功能可用于浮点数，在这种情况下，必须省略基数；分组以远离小数点的方向进行。 例如，
 </p>
 <div class="example">
 <pre class="example-preformatted">zmodload zsh/mathfunc
@@ -2468,7 +2468,7 @@ print $(( [#_] sqrt(1e7) ))
 </p>
 <dl class="table">
 <dt><code class="t">+ - ! ~ ++ --</code></dt>
-<dd><p>一元加/减、逻辑 NOT、补码、{pre,post}{in,de}crement
+<dd><p>一元加/减、逻辑 NOT、补码、{前,后}缀自{增,减}运算符
 </p></dd>
 <dt><code class="t">&lt;&lt; &gt;&gt;</code></dt>
 <dd><p>向左、向右位移
@@ -2521,7 +2521,7 @@ print $(( [#_] sqrt(1e7) ))
 </p>
 <dl class="table">
 <dt><code class="t">+ - ! ~ ++ --</code></dt>
-<dd><p>一元加/减、逻辑 NOT、补码、{pre,post}{in,de}crement
+<dd><p>一元加/减、逻辑 NOT、补码、{前,后}缀自{增,减}运算符
 </p></dd>
 <dt><code class="t">**</code></dt>
 <dd><p>乘幂
