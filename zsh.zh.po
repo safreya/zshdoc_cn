@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-08-03 10:32+0800\n"
+"PO-Revision-Date: 2024-08-03 12:31+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -6993,7 +6993,7 @@ msgstr "在上述每个表达式中，如果 @var{file} 的形式为 `@t{/dev/fd
 #. type: Plain text
 #: zsh.texi:3799
 msgid "In the forms which do numeric comparison, the expressions @var{exp} undergo arithmetic expansion as if they were enclosed in @t{$((}@var{...}@t{))}."
-msgstr "在进行数字比较的表格中，表达式 @var{exp} 会进行算术扩展，就像它们被括入 @t{$((}@var{...}@t{))} 中一样。"
+msgstr "在进行数字比较的形式中，表达式 @var{exp} 会进行算术扩展，就像它们被括入 @t{$((}@var{...}@t{))} 中一样。"
 
 #. type: Plain text
 #: zsh.texi:3802
