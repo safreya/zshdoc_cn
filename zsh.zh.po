@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-07-23 16:17+0800\n"
+"PO-Revision-Date: 2024-08-03 10:32+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -6960,8 +6960,8 @@ msgid ""
 "This special use of filename generation is only available with the @t{[[} syntax.  If the condition occurs within the @t{[} or @t{test} builtin commands then globbing occurs instead as part of normal "
 "command line expansion before the condition is evaluated.  In this case it may generate multiple words which are likely to confuse the syntax of the test command."
 msgstr ""
-"只有在使用 @t{[[} 语法时，才能使用这种特殊的文件名生成方式。 如果条件出现在 @t{[} 或 @t{test} 内置命令中，则在条件求值之前，会作为正常命令行扩展的一部分进行套选。 在这种情况下，可能会产生多个单词，从而混淆"
-"测试命令的语法。"
+"只有在使用 @t{[[} 语法时，才能使用这种特殊的文件名生成方式。 如果条件出现在 @t{[} 或 @t{test} 内置命令中，则在条件求值之前，会作为正常命令行扩展的一部分进行 globbing。 在这种情况下，可能会产生多个单词，从"
+"而混淆测试命令的语法。"
 
 #. type: example
 #: zsh.texi:3772
@@ -6981,7 +6981,7 @@ msgstr "如果当且仅当当前目录中至少有一个以字符串`@t{file}'�
 msgid ""
 "Pattern metacharacters are active for the @var{pattern} arguments; the patterns are the same as those used for filename generation, see @ref{Filename Generation}, but there is no special behaviour of "
 "`@t{/}' nor initial dots, and no glob qualifiers are allowed."
-msgstr "模式元字符对 @var{pattern} 参数有效；模式与用于文件名生成的模式相同，请参阅 @ref{文件名生成}，但不使用 `@t{/}'或前导点（initial dots），也不允许使用 glob 限定符。"
+msgstr "模式元字符对 @var{pattern} 参数有效；模式与用于文件名生成的模式相同，请参阅 @ref{文件名生成}，但 `@t{/}'或前导点（initial dots）没有特殊行为，也不允许使用 glob 限定符。"
 
 #. type: Plain text
 #: zsh.texi:3794

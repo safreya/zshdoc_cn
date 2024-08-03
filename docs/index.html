@@ -2845,7 +2845,7 @@ $var ]]</code> 与 <code class="t">[[ -n $var ]]</code> 相同。 建议尽可�
 与其他形式的扩展结果一样，文件名生成的结果会连接在一起形成一个单词。
 </p>
 <p>只有在使用 <code class="t">[[</code> 语法时，才能使用这种特殊的文件名生成方式。 如果条件出现在 <code class="t">[</code> 或 <code class="t">test</code>
-内置命令中，则在条件求值之前，会作为正常命令行扩展的一部分进行套选。 在这种情况下，可能会产生多个单词，从而混淆测试命令的语法。
+内置命令中，则在条件求值之前，会作为正常命令行扩展的一部分进行 globbing。 在这种情况下，可能会产生多个单词，从而混淆测试命令的语法。
 </p>
 <p>例如,
 </p>
@@ -2856,8 +2856,8 @@ $var ]]</code> 与 <code class="t">[[ -n $var ]]</code> 相同。 建议尽可�
 <p>如果当且仅当当前目录中至少有一个以字符串&lsquo;<code class="t">file</code>&rsquo;开头的文件时，才会产生状态 0。 全局(globbing)限定符 <code class="t">N</code>
 确保在没有匹配文件的情况下表达式为空。
 </p>
-<p>模式元字符对 <var class="var">pattern</var> 参数有效；模式与用于文件名生成的模式相同，请参阅 <a class="ref" href="#g_t_6587_4ef6_540d_751f_6210">文件名生成</a>，但不使用
-&lsquo;<code class="t">/</code>&rsquo;或前导点（initial dots），也不允许使用 glob 限定符。
+<p>模式元字符对 <var class="var">pattern</var> 参数有效；模式与用于文件名生成的模式相同，请参阅 <a class="ref" href="#g_t_6587_4ef6_540d_751f_6210">文件名生成</a>，但
+&lsquo;<code class="t">/</code>&rsquo;或前导点（initial dots）没有特殊行为，也不允许使用 glob 限定符。
 </p>
 <p>在上述每个表达式中，如果 <var class="var">file</var> 的形式为 &lsquo;<code class="t">/dev/fd/</code><var class="var">n</var>&rsquo;，其中 <var class="var">n</var>
 为整数，那么即使底层系统不支持 <code class="t">/dev/fd</code> 目录，测试也会应用于描述符编号为 <var class="var">n</var> 的打开的文件。
