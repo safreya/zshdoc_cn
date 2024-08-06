@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-08-06 14:14+0800\n"
+"PO-Revision-Date: 2024-08-06 14:32+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -8230,7 +8230,7 @@ msgid ""
 msgstr ""
 "例如，`@t{!}'  是前一条命令的事件指示器，因此 `@t{!!:1}' 总是指前一条命令的第一个字，而 `@t{!!$}' 总是指前一条命令的最后一个字。 如果设置了 @t{CSH_JUNKIE_HISTORY}，则  `@t{!:1}'  和  `@t{!$}'  的功能分别"
 "与 `@t{!!:1}' 和 `@t{!!$}' 相同。 反之，如果 @t{CSH_JUNKIE_HISTORY} 未设置，则  `@t{!:1}'  和  `@t{!$}'  分别指向当前命令行中最近的历史引用所指向的同一事件的第一个字和最后一个字，如果没有前一个引用，则指向"
-"上一条命令。@uref{comments/expansion.html#expansion-cshjunkiehistory,扩展.历史扩展.cshjunkiehistory}"
+"上一条命令。@uref{comments/expansion.html#expansion-cshjunkiehistory,[译注:扩展.历史扩展.cshjunkiehistory]}"
 
 #. type: Plain text
 #: zsh.texi:4404
