@@ -2862,7 +2862,7 @@ $var ]]</code> 与 <code class="t">[[ -n $var ]]</code> 相同。 建议尽可�
 <p>在上述每个表达式中，如果 <var class="var">file</var> 的形式为 &lsquo;<code class="t">/dev/fd/</code><var class="var">n</var>&rsquo;，其中 <var class="var">n</var>
 为整数，那么即使底层系统不支持 <code class="t">/dev/fd</code> 目录，测试也会应用于描述符编号为 <var class="var">n</var> 的打开的文件。
 </p>
-<p>在进行数字比较的表格中，表达式 <var class="var">exp</var> 会进行算术扩展，就像它们被括入 <code class="t">$((</code><var class="var">...</var><code class="t">))</code> 中一样。
+<p>在进行数字比较的形式中，表达式 <var class="var">exp</var> 会进行算术扩展，就像它们被括入 <code class="t">$((</code><var class="var">...</var><code class="t">))</code> 中一样。
 </p>
 <p>例如，以下内容：
 </p>
@@ -3329,7 +3329,7 @@ strftime(3)，如果系统支持这些扩展字符，它们也可以正常工作
 总是指前一条命令的最后一个字。 如果设置了 <code class="t">CSH_JUNKIE_HISTORY</code>，则  &lsquo;<code class="t">!:1</code>&rsquo;  和  &lsquo;<code class="t">!$</code>&rsquo;
 的功能分别与 &lsquo;<code class="t">!!:1</code>&rsquo; 和 &lsquo;<code class="t">!!$</code>&rsquo; 相同。 反之，如果 <code class="t">CSH_JUNKIE_HISTORY</code> 未设置，则
 &lsquo;<code class="t">!:1</code>&rsquo;  和  &lsquo;<code class="t">!$</code>&rsquo;
-分别指向当前命令行中最近的历史引用所指向的同一事件的第一个字和最后一个字，如果没有前一个引用，则指向上一条命令。
+分别指向当前命令行中最近的历史引用所指向的同一事件的第一个字和最后一个字，如果没有前一个引用，则指向上一条命令。<a class="uref" href="comments/expansion.html#expansion-cshjunkiehistory">扩展.历史扩展.cshjunkiehistory</a>
 </p>
 <p>字符序列  &lsquo;<code class="t">^</code><var class="var">foo</var><code class="t">^</code><var class="var">bar</var>&rsquo; （其中 &lsquo;<code class="t">^</code>&rsquo; 实际上是 <code class="t">histchars</code>
 参数的第二个字符）重复上一条命令，用 <var class="var">bar</var> 替换 <var class="var">foo</var> 字符串。 更确切地说，序列
