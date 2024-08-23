@@ -3329,7 +3329,7 @@ strftime(3)，如果系统支持这些扩展字符，它们也可以正常工作
 总是指前一条命令的最后一个字。 如果设置了 <code class="t">CSH_JUNKIE_HISTORY</code>，则  &lsquo;<code class="t">!:1</code>&rsquo;  和  &lsquo;<code class="t">!$</code>&rsquo;
 的功能分别与 &lsquo;<code class="t">!!:1</code>&rsquo; 和 &lsquo;<code class="t">!!$</code>&rsquo; 相同。 反之，如果 <code class="t">CSH_JUNKIE_HISTORY</code> 未设置，则
 &lsquo;<code class="t">!:1</code>&rsquo;  和  &lsquo;<code class="t">!$</code>&rsquo;
-分别指向当前命令行中最近的历史引用所指向的同一事件的第一个字和最后一个字，如果没有前一个引用，则指向上一条命令。<a class="uref" href="comments/expansion.html#expansion-cshjunkiehistory">扩展.历史扩展.cshjunkiehistory</a>
+分别指向当前命令行中最近的历史引用所指向的同一事件的第一个字和最后一个字，如果没有前一个引用，则指向上一条命令。<a class="uref" href="comments/expansion.html#expansion-cshjunkiehistory">[译注:扩展.历史扩展.cshjunkiehistory]</a>
 </p>
 <p>字符序列  &lsquo;<code class="t">^</code><var class="var">foo</var><code class="t">^</code><var class="var">bar</var>&rsquo; （其中 &lsquo;<code class="t">^</code>&rsquo; 实际上是 <code class="t">histchars</code>
 参数的第二个字符）重复上一条命令，用 <var class="var">bar</var> 替换 <var class="var">foo</var> 字符串。 更确切地说，序列
