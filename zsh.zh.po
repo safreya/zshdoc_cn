@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-17 14:31+0800\n"
-"PO-Revision-Date: 2024-08-06 14:32+0800\n"
+"PO-Revision-Date: 2024-08-26 09:35+0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: zh\n"
@@ -8602,9 +8602,9 @@ msgid ""
 "trigger a `failed modifier' error in history expansion)."
 msgstr ""
 "删除路径名的尾部组件，将路径缩短一级目录：这是路径名的 \"头\"。 其作用类似于 `@t{dirname}' 。 如果 @t{h}后面紧跟任意数量的十进制数字（没有空格或其他分隔符），且所得数字的值非零，则保留该数量的前导成分，而"
-"不是删除最后一个成分。 在绝对路径中，前导成分  `@t{/}'  是第一个成分，例如，如果 @t{var=/my/path/to/something}，那么 @t{$@{var:h3@}}  将取代  @t{/my/path}。 连续的 `/' 与单个  `/' 的处理方式相同。 在参数替"
-"换中，只有当表达式位于大括号中时才能使用数字，例如，简式替换 @t{$var:h2} 将被视为 @t{$@{var:h@}2}，而不是 @t{$@{var:h2@}}。 在历史替换或 globbing 限定符中使用数字不受限制。 如果请求的组件数多于实际存在的组"
-"件数，则会替换整个路径（因此不会在历史扩展中触发 `failed modifier' 错误）。"
+"不是删除最后一个成分。 在绝对路径中，前导成分  `@t{/}'  是第一个成分，例如，如果 @t{var=/my/path/to/something}，那么 @t{$@{var:h3@}}  将替换为  @t{/my/path}。 连续的 `/' 与单个  `/' 的处理方式相同。 在参数"
+"替换中，只有当表达式位于大括号中时才能使用数字，例如，简式替换 @t{$var:h2} 将被视为 @t{$@{var:h@}2}，而不是 @t{$@{var:h2@}}。 在历史替换或 globbing 限定符中使用数字不受限制。 如果请求的组件数多于实际存在的"
+"组件数，则会替换整个路径（因此不会在历史扩展中触发 `failed modifier' 错误）。"
 
 #. type: table
 #: zsh.texi:4581
@@ -8723,8 +8723,8 @@ msgid ""
 "Remove all leading pathname components, leaving the final component (tail).  This works like `@t{basename}'.  Any trailing slashes are first removed.  Decimal digits are handled as described above for "
 "(h), but in this case that number of trailing components is preserved instead of the default 1; 0 is treated the same as 1."
 msgstr ""
-"删除路径名的所有前导成分，留下最后一个成分（尾部）。 其工作原理类似于 `@t{basename}'。 首先会删除任何尾部的斜线。 小数位的处理方法如上文 (h) 所述，但在这种情况下，尾部成分的个数将被保留，而不是默认的 1；0 "
-"与 1 的处理方法相同。"
+"删除路径名的所有前导成分，留下最后一个成分（尾部）。 其工作原理类似于 `@t{basename}'。 首先会删除任何尾部的斜线。 十进制 digits 的处理方法如上文 (h) 所述，但在这种情况下，尾部成分的个数将被保留，而不是默认"
+"的 1；0 与 1 的处理方法相同。"
 
 #. type: t{#1}
 #: zsh.texi:4643 zsh.texi:5645 zsh.texi:7043
@@ -8757,8 +8757,8 @@ msgid ""
 "newline immediately follows @var{r}; the rightmost `@t{?}' in a context scan can similarly be omitted.  Note the same record of the last @var{l} and @var{r} is maintained across all forms of expansion."
 msgstr ""
 "@t{s/}@var{l}@t{/}@var{r}@t{/} 替换的工作原理如下。 默认情况下，替换的左侧不是模式，而是字符串。 任何字符都可以代替 `@t{/}' 作为分隔符。 反斜线引用分隔符。 右侧 @var{r} 中的字符 `@t{&}' 将被左侧 @var{l} 中"
-"的文本替换。 `@t{&}'  可以用反斜线引用。空的 @var{l} 使用前一个 @var{l} 中的字符串或前一个上下文扫描字符串 `@t{!?}@var{s}'  中的@var{s} 。 如果 @var{r} 后面紧跟换行符，则可以省略最右边的分隔符；同样，也可"
-"以省略上下文扫描中最右边的 `@t{?}'。 请注意，在所有扩展形式中，最后一个 @var{l} 和 @var{r} 的记录都是相同的。"
+"的文本替换。 `@t{&}'  可以用反斜线引用。空的 @var{l} 使用前一个 @var{l} 中的字符串或前一个上下文搜索字符串 `@t{!?}@var{s}'  中的@var{s} 。 如果 @var{r} 后面紧跟换行符，则可以省略最右边的分隔符；同样，也可"
+"以省略上下文搜索中最右边的 `@t{?}'。 请注意，在所有扩展形式中，最后一个 @var{l} 和 @var{r} 的记录都是相同的。"
 
 #. type: Plain text
 #: zsh.texi:4669
