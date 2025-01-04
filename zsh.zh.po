@@ -3776,7 +3776,7 @@ msgstr ""
 #: zsh.texi:1979 zsh.texi:19622
 #, no-wrap
 msgid "quoting"
-msgstr "引用"
+msgstr "quoting"
 
 #. type: Plain text
 #: zsh.texi:1983

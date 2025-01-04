@@ -1595,7 +1595,7 @@ unalias: no such hash table element: bar
 <div class="section-level-extent" id="g_t_5f15_7528">
 
 <h3 class="section" id="Yin-Yong-"><span>6.9 引用<a class="copiable-link" href="#Yin-Yong-"> &para;</a></span></h3>
-<a class="index-entry-id" id="index-Yin-Yong-"></a>
+<a class="index-entry-id" id="index-quoting"></a>
 <p>在一个字符前加上&lsquo;<code class="t">\</code>&rsquo;，该字符就可以被<em class="emph">引用</em>（即使他表示自己）。 后跟换行符的 &lsquo;<code class="t">\</code>&rsquo; 将被忽略。
 </p>
 <p>由 &lsquo;<code class="t">$'</code>&rsquo;  和 &lsquo;<code class="t">'</code>&rsquo;括起来的字符串的处理方式与 <code class="t">print</code> 内置函数的字符串参数相同，生成的字符串被认为是完全加引号的。
@@ -3477,7 +3477,7 @@ strftime(3)，如果系统支持这些扩展字符，它们也可以正常工作
 <dd><p>删除路径名的尾部组件，将路径缩短一级目录：这是路径名的 &quot;头&quot;。 其作用类似于 &lsquo;<code class="t">dirname</code>&rsquo; 。 如果
 <code class="t">h</code>后面紧跟任意数量的十进制数字（没有空格或其他分隔符），且所得数字的值非零，则保留该数量的前导成分，而不是删除最后一个成分。
 在绝对路径中，前导成分  &lsquo;<code class="t">/</code>&rsquo;  是第一个成分，例如，如果 <code class="t">var=/my/path/to/something</code>，那么
-<code class="t">${var:h3}</code>  将取代  <code class="t">/my/path</code>。 连续的 &lsquo;/&rsquo; 与单个  &lsquo;/&rsquo; 的处理方式相同。
+<code class="t">${var:h3}</code>  将替换为  <code class="t">/my/path</code>。 连续的 &lsquo;/&rsquo; 与单个  &lsquo;/&rsquo; 的处理方式相同。
 在参数替换中，只有当表达式位于大括号中时才能使用数字，例如，简式替换 <code class="t">$var:h2</code> 将被视为 <code class="t">${var:h}2</code>，而不是
 <code class="t">${var:h2}</code>。 在历史替换或 globbing 限定符中使用数字不受限制。
 如果请求的组件数多于实际存在的组件数，则会替换整个路径（因此不会在历史扩展中触发 &lsquo;failed modifier&rsquo; 错误）。
@@ -3528,8 +3528,8 @@ strftime(3)，如果系统支持这些扩展字符，它们也可以正常工作
 </p>
 </dd>
 <dt><code class="t">t</code> [ <var class="var">digits</var> ]</dt>
-<dd><p>删除路径名的所有前导成分，留下最后一个成分（尾部）。 其工作原理类似于 &lsquo;<code class="t">basename</code>&rsquo;。 首先会删除任何尾部的斜线。
-小数位的处理方法如上文 (h) 所述，但在这种情况下，尾部成分的个数将被保留，而不是默认的 1；0 与 1 的处理方法相同。
+<dd><p>删除路径名的所有前导成分，留下最后一个成分（尾部）。 其工作原理类似于 &lsquo;<code class="t">basename</code>&rsquo;。 首先会删除任何尾部的斜线。 十进制 digits
+的处理方法如上文 (h) 所述，但在这种情况下，尾部成分的个数将被保留，而不是默认的 1；0 与 1 的处理方法相同。
 </p>
 </dd>
 <dt><code class="t">u</code></dt>
@@ -3544,8 +3544,8 @@ strftime(3)，如果系统支持这些扩展字符，它们也可以正常工作
 
 <p><code class="t">s/</code><var class="var">l</var><code class="t">/</code><var class="var">r</var><code class="t">/</code> 替换的工作原理如下。 默认情况下，替换的左侧不是模式，而是字符串。 任何字符都可以代替
 &lsquo;<code class="t">/</code>&rsquo; 作为分隔符。 反斜线引用分隔符。 右侧 <var class="var">r</var> 中的字符 &lsquo;<code class="t">&amp;</code>&rsquo; 将被左侧 <var class="var">l</var> 中的文本替换。
-&lsquo;<code class="t">&amp;</code>&rsquo;  可以用反斜线引用。空的 <var class="var">l</var> 使用前一个 <var class="var">l</var> 中的字符串或前一个上下文扫描字符串 &lsquo;<code class="t">!?</code><var class="var">s</var>&rsquo;
-中的<var class="var">s</var> 。 如果 <var class="var">r</var> 后面紧跟换行符，则可以省略最右边的分隔符；同样，也可以省略上下文扫描中最右边的 &lsquo;<code class="t">?</code>&rsquo;。
+&lsquo;<code class="t">&amp;</code>&rsquo;  可以用反斜线引用。空的 <var class="var">l</var> 使用前一个 <var class="var">l</var> 中的字符串或前一个上下文搜索字符串 &lsquo;<code class="t">!?</code><var class="var">s</var>&rsquo;
+中的<var class="var">s</var> 。 如果 <var class="var">r</var> 后面紧跟换行符，则可以省略最右边的分隔符；同样，也可以省略上下文搜索中最右边的 &lsquo;<code class="t">?</code>&rsquo;。
 请注意，在所有扩展形式中，最后一个 <var class="var">l</var> 和 <var class="var">r</var> 的记录都是相同的。
 </p>
 <p>请注意，如果在 glob 限定符中使用了 &lsquo;<code class="t">&amp;</code>&rsquo;，则需要额外的反斜杠，因为在这种情况下 <code class="t">&amp;</code> 是一个特殊字符。
@@ -14244,7 +14244,7 @@ PREFIX=${PREFIX#*=}
 <dd><p>在引号内补全时，该值包含引号字符（即单引号、双引号或反引号）。 否则未设置。
 </p>
 </dd>
-<dt><a id="index-quoting_002c-compstate"></a><span><code class="t">引用</code><a class="copiable-link" href="#index-quoting_002c-compstate"> &para;</a></span></dt>
+<dt><a id="index-quoting_002c-compstate"></a><span><code class="t">quoting</code><a class="copiable-link" href="#index-quoting_002c-compstate"> &para;</a></span></dt>
 <dd><p>如果在单引号内补全，则设置为字符串 <code class="t">single</code>；在双引号内补全，则设置为字符串 <code class="t">double</code>；在反引号内补全，则设置为字符串
 <code class="t">backtick</code>。 否则不设置。
 </p>
@@ -29036,6 +29036,8 @@ zargs -- **/*(.) -- ls -ld --
  &nbsp; 
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-P"><b>P</b></a>
  &nbsp; 
+<a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-Q"><b>Q</b></a>
+ &nbsp; 
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-R"><b>R</b></a>
  &nbsp; 
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-S"><b>S</b></a>
@@ -29472,6 +29474,9 @@ zargs -- **/*(.) -- ls -ld --
 <tr><td></td><td class="printindex-index-entry"><a href="#index-pushd_002c-Shi-Yong-cd-Xiang-">pushd, 使用 cd 像</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-pushd_002c-Dao-home">pushd, 到 home</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
 <tr><td colspan="3"><hr></td></tr>
+<tr><th id="g_t_6982_5ff5_7d22_5f15_cp_letter-Q">Q</th></tr>
+<tr><td></td><td class="printindex-index-entry"><a href="#index-quoting">quoting</a></td><td class="printindex-index-section"><a href="#g_t_5f15_7528">引用</a></td></tr>
+<tr><td colspan="3"><hr></td></tr>
 <tr><th id="g_t_6982_5ff5_7d22_5f15_cp_letter-R">R</th></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-rc_002c-Can-Shu-Kuo-Zhan-Feng-Ge-">rc, 参数扩展风格</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-rc_002c-Yin-Hao-Feng-Ge-">rc, 引号风格</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
@@ -29875,7 +29880,6 @@ zargs -- **/*(.) -- ls -ld --
 <tr><th id="g_t_6982_5ff5_7d22_5f15_cp_letter-引">引</th></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-Yin-Hao-Feng-Ge-_002c-csh">引号风格, csh</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-Yin-Hao-Feng-Ge-_002c-rc">引号风格, rc</a></td><td class="printindex-index-section"><a href="#g_t_9009_9879_8bf4_660e">选项说明</a></td></tr>
-<tr><td></td><td class="printindex-index-entry"><a href="#index-Yin-Yong-">引用</a></td><td class="printindex-index-section"><a href="#g_t_5f15_7528">引用</a></td></tr>
 <tr><td></td><td class="printindex-index-entry"><a href="#index-Yin-Yong-Zuo-Ye-">引用作业</a></td><td class="printindex-index-section"><a href="#g_t_4f5c_4e1a_548c_4fe1_53f7">作业和信号</a></td></tr>
 <tr><td colspan="3"><hr></td></tr>
 <tr><th id="g_t_6982_5ff5_7d22_5f15_cp_letter-强">强</th></tr>
@@ -30410,6 +30414,8 @@ zargs -- **/*(.) -- ls -ld --
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-M"><b>M</b></a>
  &nbsp; 
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-P"><b>P</b></a>
+ &nbsp; 
+<a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-Q"><b>Q</b></a>
  &nbsp; 
 <a class="summary-letter-printindex" href="#g_t_6982_5ff5_7d22_5f15_cp_letter-R"><b>R</b></a>
  &nbsp; 
